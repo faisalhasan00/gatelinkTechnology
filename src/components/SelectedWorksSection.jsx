@@ -9,8 +9,8 @@ if (typeof window !== 'undefined') {
 }
 
 const isDarkBg = (bg) => {
-  if (!bg) return true;
-  if (['#191414', '#111111', '#FF5A5F', '#0D1B2A', '#0F2417', '#1A1713', '#0A151E', '#0C1E30', '#090909', '#080808'].includes(bg)) return true;
+  if (!bg) return false;
+  if (['#191414', '#111111', '#090909', '#080808'].includes(bg)) return true;
   if (bg.startsWith('#') && (bg.length === 7 || bg.length === 4)) {
     let hex = bg.slice(1);
     if (hex.length === 3) hex = hex.split('').map((c) => c + c).join('');
@@ -20,10 +20,10 @@ const isDarkBg = (bg) => {
     const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
     return luminance < 140;
   }
-  return true;
+  return false;
 };
-const getTextColor = (bg) => (isDarkBg(bg) ? '#ffffff' : '#111827');
-const getSubTextColor = (bg) => (isDarkBg(bg) ? 'rgba(255,255,255,0.72)' : 'rgba(0,0,0,0.65)');
+const getTextColor = (bg) => (isDarkBg(bg) ? '#ffffff' : '#1e293b');
+const getSubTextColor = (bg) => (isDarkBg(bg) ? 'rgba(255,255,255,0.72)' : 'rgba(0,0,0,0.48)');
 
 const HeadingChars = ({ text }) => (
   <span aria-label={text} style={{ display: 'inline-block' }}>
@@ -459,7 +459,7 @@ export default function SelectedWorksSection() {
             width: '100%',
             userSelect: 'none',
             overflow: 'hidden',
-            height: 'clamp(460px, 60vh, 580px)'
+            height: 'clamp(520px, 64vh, 600px)'
           }}
         >
           <div
@@ -484,17 +484,17 @@ export default function SelectedWorksSection() {
                 onClick={() => setActiveModalCase(study)}
                 style={{
                   width: '420px',
-                  height: 'clamp(440px, 54vh, 530px)',
+                  height: 'clamp(490px, 60vh, 540px)',
                   backgroundColor: study.bg || '#F9F7F4',
-                  borderRadius: '24px',
+                  borderRadius: '26px',
                   position: 'relative',
                   flexShrink: 0,
                   cursor: 'pointer',
                   transform: 'translateZ(0)',
                   transformStyle: 'preserve-3d',
                   willChange: 'transform',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.25)',
-                  border: '1px solid rgba(0, 0, 0, 0.06)',
+                  boxShadow: '0 16px 40px rgba(0, 0, 0, 0.28)',
+                  border: '1px solid rgba(0, 0, 0, 0.05)',
                   overflow: 'hidden',
                   display: 'flex',
                   flexDirection: 'column',
@@ -515,165 +515,308 @@ export default function SelectedWorksSection() {
                   }}
                 />
 
-                {/* Card Content matching live Ozrit */}
-                <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    {/* Top Bar: Logo & Index */}
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '24px 24px 0 24px'
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', height: '40px' }}>
-                        {study.logo ? (
+                {/* Card Content matching reference image */}
+                <div style={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                  {/* Top Bar: Logo & Index */}
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '28px 28px 0 28px',
+                      height: '66px'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      {study.id === 'taazabazar' ? (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
                           <img
-                            src={study.logo}
-                            alt={`${study.client} logo`}
+                            src="/projects/logos/taazabazar.png"
+                            alt="Taaza Bazar"
                             style={{
-                              height: study.id === 'taazabazar' ? '38px' : '36px',
-                              width: study.id === 'taazabazar' ? '38px' : 'auto',
-                              maxWidth: '160px',
-                              borderRadius: study.id === 'taazabazar' ? '9px' : '0px',
-                              objectFit: 'contain',
-                              boxShadow: study.id === 'taazabazar' ? '0 3px 10px rgba(0,0,0,0.35)' : 'none'
-                            }}
-                            onError={(e) => {
-                              e.currentTarget.style.display = 'none';
-                              if (e.currentTarget.nextSibling) {
-                                e.currentTarget.nextSibling.style.display = 'flex';
-                              }
+                              width: '36px',
+                              height: '36px',
+                              borderRadius: '9px',
+                              objectFit: 'cover',
+                              boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
                             }}
                           />
-                        ) : null}
-                        {study.id === 'taazabazar' && (
                           <span
                             style={{
-                              fontSize: '18px',
+                              fontSize: '19px',
                               fontWeight: '800',
-                              color: '#ffffff',
-                              letterSpacing: '-0.01em'
+                              color: '#15803D',
+                              letterSpacing: '-0.02em',
+                              fontFamily: "'Inter', sans-serif"
                             }}
                           >
                             Taaza Bazar
                           </span>
-                        )}
-                        <span
+                        </div>
+                      ) : study.id === 'buildscape' ? (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
+                          <img
+                            src="/projects/logos/buildscape.png"
+                            alt="Buildscape"
+                            style={{
+                              height: '34px',
+                              width: 'auto',
+                              objectFit: 'contain'
+                            }}
+                          />
+                          <span
+                            style={{
+                              fontSize: '18px',
+                              fontWeight: '800',
+                              color: '#92400E',
+                              letterSpacing: '-0.01em',
+                              fontFamily: "'Inter', sans-serif"
+                            }}
+                          >
+                            Buildscape
+                          </span>
+                        </div>
+                      ) : study.id === 'tapmenu' ? (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <img
+                            src="/projects/logos/tapmenu.png"
+                            alt="TapMenu"
+                            style={{
+                              height: '32px',
+                              width: 'auto',
+                              objectFit: 'contain'
+                            }}
+                          />
+                          <span
+                            style={{
+                              fontSize: '18px',
+                              fontWeight: '800',
+                              color: '#4338CA',
+                              letterSpacing: '-0.01em',
+                              fontFamily: "'Inter', sans-serif"
+                            }}
+                          >
+                            TapMenu
+                          </span>
+                        </div>
+                      ) : study.logo ? (
+                        <img
+                          src={study.logo}
+                          alt={`${study.client} logo`}
                           style={{
-                            display: study.logo ? 'none' : 'flex',
-                            height: '36px',
-                            alignItems: 'center',
-                            fontSize: '18px',
-                            fontWeight: '700',
-                            color: getTextColor(study.bg)
+                            height: '34px',
+                            width: 'auto',
+                            maxWidth: '170px',
+                            objectFit: 'contain'
                           }}
-                        >
+                        />
+                      ) : (
+                        <span style={{ fontSize: '18px', fontWeight: '800', color: '#0F172A' }}>
                           {study.client}
                         </span>
-                      </div>
-
-                      <span
-                        style={{
-                          fontSize: '12px',
-                          fontWeight: '700',
-                          fontFamily: 'monospace',
-                          color: getSubTextColor(study.bg),
-                          letterSpacing: '0.05em'
-                        }}
-                      >
-                        {String(idx + 1).padStart(2, '0')}
-                      </span>
+                      )}
                     </div>
 
-                    {/* Description */}
-                    <div style={{ padding: '16px 24px 8px 24px' }}>
-                      <p
-                        style={{
-                          fontSize: '14.5px',
-                          lineHeight: 1.6,
-                          fontWeight: '500',
-                          color: getTextColor(study.bg),
-                          margin: 0
-                        }}
-                      >
-                        {study.description}
-                      </p>
-                    </div>
+                    <span
+                      style={{
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        color: '#94A3B8',
+                        letterSpacing: '0.04em'
+                      }}
+                    >
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
                   </div>
 
-                  {/* Device Preview Image Container */}
+                  {/* Description Paragraph */}
+                  <div style={{ padding: '16px 28px 0 28px' }}>
+                    <p
+                      style={{
+                        fontSize: '14.5px',
+                        lineHeight: 1.62,
+                        fontWeight: '500',
+                        color: '#1E293B',
+                        margin: 0
+                      }}
+                    >
+                      {study.description}
+                    </p>
+                  </div>
+
+                  {/* Device Preview Banner with Colored L-frame */}
                   <div
                     style={{
                       position: 'relative',
-                      flex: 1,
-                      minHeight: '185px',
-                      margin: '6px 20px 14px 20px',
+                      margin: '22px 24px 0 24px',
+                      height: '180px',
+                      display: 'flex',
+                      alignItems: 'flex-end',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    {/* White Inner Card with Accent L-Frame (bottom + left border) */}
+                    <div
+                      style={{
+                        position: 'relative',
+                        width: '100%',
+                        height: '142px',
+                        backgroundColor: '#ffffff',
+                        borderRadius: '20px',
+                        borderLeft: `8px solid ${study.textColor || '#0066FF'}`,
+                        borderBottom: `8px solid ${study.textColor || '#0066FF'}`,
+                        borderTop: 'none',
+                        borderRight: 'none',
+                        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.05)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '16px 18px',
+                        overflow: 'visible'
+                      }}
+                    >
+                      {/* Left: Mini Logo & Slogan */}
+                      <div style={{ flex: 1, paddingRight: '12px', zIndex: 2 }}>
+                        {study.id === 'taazabazar' ? (
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <img
+                              src="/projects/logos/taazabazar.png"
+                              alt="Taaza Bazar"
+                              style={{ width: '24px', height: '24px', borderRadius: '6px', objectFit: 'cover' }}
+                            />
+                            <span style={{ fontSize: '13px', fontWeight: '800', color: '#15803D' }}>
+                              Taaza Bazar
+                            </span>
+                          </div>
+                        ) : study.id === 'buildscape' ? (
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <img
+                              src="/projects/logos/buildscape.png"
+                              alt="Buildscape"
+                              style={{ height: '22px', width: 'auto', objectFit: 'contain' }}
+                            />
+                            <span style={{ fontSize: '13px', fontWeight: '800', color: '#92400E' }}>
+                              Buildscape
+                            </span>
+                          </div>
+                        ) : study.id === 'tapmenu' ? (
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <img
+                              src="/projects/logos/tapmenu.png"
+                              alt="TapMenu"
+                              style={{ height: '20px', width: 'auto', objectFit: 'contain' }}
+                            />
+                            <span style={{ fontSize: '13px', fontWeight: '800', color: '#4338CA' }}>
+                              TapMenu
+                            </span>
+                          </div>
+                        ) : study.logo ? (
+                          <img
+                            src={study.logo}
+                            alt={study.client}
+                            style={{
+                              height: '22px',
+                              width: 'auto',
+                              maxWidth: '120px',
+                              objectFit: 'contain'
+                            }}
+                          />
+                        ) : (
+                          <span style={{ fontSize: '13px', fontWeight: '800', color: '#0F172A' }}>
+                            {study.client}
+                          </span>
+                        )}
+
+                        <p
+                          style={{
+                            fontSize: '12.5px',
+                            fontWeight: '700',
+                            lineHeight: 1.35,
+                            color: '#1E293B',
+                            margin: '10px 0 0 0',
+                            maxWidth: '175px'
+                          }}
+                        >
+                          {study.slogan}
+                        </p>
+                      </div>
+
+                      {/* Right: Upright 3D Smartphone Mockup overlapping upwards! */}
+                      <div
+                        style={{
+                          position: 'relative',
+                          width: '106px',
+                          height: '184px',
+                          marginTop: '-48px',
+                          marginBottom: '-3px',
+                          flexShrink: 0,
+                          backgroundColor: '#0F172A',
+                          borderRadius: '18px',
+                          padding: '3.5px',
+                          boxShadow: '0 16px 32px rgba(0, 0, 0, 0.22), 0 2px 6px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.18)',
+                          zIndex: 5,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          overflow: 'hidden'
+                        }}
+                      >
+                        {/* Dynamic Island Pill */}
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: '5.5px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: '28px',
+                            height: '5.5px',
+                            backgroundColor: '#000000',
+                            borderRadius: '9999px',
+                            zIndex: 10
+                          }}
+                        />
+                        {/* Phone Screen Mockup */}
+                        <div
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            borderRadius: '15px',
+                            overflow: 'hidden',
+                            backgroundColor: '#000000'
+                          }}
+                        >
+                          <img
+                            src={study.image}
+                            alt={`${study.client} screen`}
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover',
+                              display: 'block'
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Right Colored Action Button */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '16px',
+                      right: '24px',
+                      width: '42px',
+                      height: '42px',
+                      borderRadius: '50%',
+                      backgroundColor: study.textColor || '#0066FF',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      overflow: 'hidden',
-                      borderRadius: '16px',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
-                      boxShadow: '0 12px 28px rgba(0, 0, 0, 0.45)',
-                      backgroundColor: 'rgba(0, 0, 0, 0.3)'
+                      boxShadow: `0 4px 14px ${study.textColor || '#0066FF'}45`,
+                      transition: 'transform 0.2s ease'
                     }}
                   >
-                    <img
-                      src={study.image || ''}
-                      alt={`${study.client} preview`}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        display: 'block'
-                      }}
-                    />
-                  </div>
-
-                  {/* Footer Row: "Case Study" + Circular Arrow Badge */}
-                  <div
-                    style={{
-                      padding: '0 24px 22px 24px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between'
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: '12px',
-                        fontWeight: '800',
-                        letterSpacing: '0.15em',
-                        textTransform: 'uppercase',
-                        color: getTextColor(study.bg)
-                      }}
-                    >
-                      Case Study
-                    </span>
-                    <div
-                      style={{
-                        width: '34px',
-                        height: '34px',
-                        borderRadius: '50%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        backgroundColor: study.textColor || '#0066FF',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
-                      }}
-                    >
-                      <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-                        <path
-                          d="M4 12L12 4M12 4H6M12 4V10"
-                          stroke="#FFFFFF"
-                          strokeWidth="1.8"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
+                    <ArrowUpRight size={20} color="#FFFFFF" strokeWidth={2.5} />
                   </div>
                 </div>
               </div>
@@ -684,7 +827,7 @@ export default function SelectedWorksSection() {
 
       {/* Mobile Stacked Layout with GSAP Scroll Trigger Entrance */}
       {isMobile && (
-        <div style={{ padding: '0 20px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <div style={{ padding: '0 20px', display: 'flex', flexDirection: 'column', gap: '22px' }}>
           {CASE_STUDIES.map((study, idx) => (
             <div
               key={study.id}
@@ -692,96 +835,240 @@ export default function SelectedWorksSection() {
               onClick={() => setActiveModalCase(study)}
               style={{
                 backgroundColor: study.bg || '#F9F7F4',
-                borderRadius: '20px',
-                padding: '24px 20px',
+                borderRadius: '24px',
+                padding: '24px 20px 20px 20px',
                 cursor: 'pointer',
                 position: 'relative',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.25)'
+                boxShadow: '0 10px 28px rgba(0,0,0,0.25)',
+                overflow: 'hidden'
               }}
             >
+              {/* Top Bar: Logo & Index */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', height: '36px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  {study.logo ? (
+                  {study.id === 'taazabazar' ? (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <img
+                        src="/projects/logos/taazabazar.png"
+                        alt="Taaza Bazar"
+                        style={{ width: '32px', height: '32px', borderRadius: '8px', objectFit: 'cover' }}
+                      />
+                      <span style={{ fontSize: '18px', fontWeight: '800', color: '#15803D' }}>
+                        Taaza Bazar
+                      </span>
+                    </div>
+                  ) : study.id === 'buildscape' ? (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <img
+                        src="/projects/logos/buildscape.png"
+                        alt="Buildscape"
+                        style={{ height: '30px', width: 'auto', objectFit: 'contain' }}
+                      />
+                      <span style={{ fontSize: '17px', fontWeight: '800', color: '#92400E' }}>
+                        Buildscape
+                      </span>
+                    </div>
+                  ) : study.id === 'tapmenu' ? (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
+                      <img
+                        src="/projects/logos/tapmenu.png"
+                        alt="TapMenu"
+                        style={{ height: '28px', width: 'auto', objectFit: 'contain' }}
+                      />
+                      <span style={{ fontSize: '17px', fontWeight: '800', color: '#4338CA' }}>
+                        TapMenu
+                      </span>
+                    </div>
+                  ) : study.logo ? (
                     <img
                       src={study.logo}
                       alt={study.client}
                       style={{
-                        height: study.id === 'taazabazar' ? '34px' : '30px',
-                        width: study.id === 'taazabazar' ? '34px' : 'auto',
+                        height: '30px',
+                        width: 'auto',
                         maxWidth: '140px',
-                        borderRadius: study.id === 'taazabazar' ? '8px' : '0px',
                         objectFit: 'contain'
                       }}
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        if (e.currentTarget.nextSibling) {
-                          e.currentTarget.nextSibling.style.display = 'inline-block';
-                        }
-                      }}
                     />
-                  ) : null}
-                  {study.id === 'taazabazar' && (
-                    <span style={{ fontSize: '17px', fontWeight: '800', color: '#ffffff' }}>
-                      Taaza Bazar
+                  ) : (
+                    <span style={{ fontSize: '18px', fontWeight: '800', color: '#0F172A' }}>
+                      {study.client}
                     </span>
                   )}
-                  <span
-                    style={{
-                      display: study.logo ? 'none' : 'inline-block',
-                      fontSize: '18px',
-                      fontWeight: '800',
-                      color: getTextColor(study.bg)
-                    }}
-                  >
-                    {study.client}
-                  </span>
                 </div>
-                <span style={{ fontSize: '12px', fontWeight: '700', fontFamily: 'monospace', color: getSubTextColor(study.bg) }}>
+                <span style={{ fontSize: '13px', fontWeight: '600', color: '#94A3B8' }}>
                   {String(idx + 1).padStart(2, '0')}
                 </span>
               </div>
 
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: getTextColor(study.bg), marginBottom: '18px' }}>
+              {/* Description */}
+              <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#1E293B', marginBottom: '18px', fontWeight: '500' }}>
                 {study.description}
               </p>
 
+              {/* Inner Branded Banner for Mobile */}
               <div
                 style={{
-                  height: '190px',
+                  position: 'relative',
+                  width: '100%',
+                  height: '165px',
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '16px',
-                  borderRadius: '14px',
-                  overflow: 'hidden',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  boxShadow: '0 8px 22px rgba(0, 0, 0, 0.4)',
-                  backgroundColor: 'rgba(0, 0, 0, 0.3)'
+                  alignItems: 'flex-end',
+                  marginBottom: '10px'
                 }}
               >
-                <img
-                  src={study.image}
-                  alt={`${study.client} preview`}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span style={{ fontSize: '11px', fontWeight: '800', letterSpacing: '0.12em', textTransform: 'uppercase', color: getTextColor(study.bg) }}>
-                  Case Study
-                </span>
                 <div
                   style={{
-                    width: '32px',
-                    height: '32px',
+                    position: 'relative',
+                    width: '100%',
+                    height: '128px',
+                    backgroundColor: '#ffffff',
+                    borderRadius: '18px',
+                    borderLeft: `6px solid ${study.textColor || '#0066FF'}`,
+                    borderBottom: `6px solid ${study.textColor || '#0066FF'}`,
+                    borderTop: 'none',
+                    borderRight: 'none',
+                    boxShadow: '0 6px 18px rgba(0, 0, 0, 0.05)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '14px 14px',
+                    overflow: 'visible'
+                  }}
+                >
+                  {/* Left: Mini Logo & Slogan */}
+                  <div style={{ flex: 1, paddingRight: '10px', zIndex: 2 }}>
+                    {study.id === 'taazabazar' ? (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '6px' }}>
+                        <img
+                          src="/projects/logos/taazabazar.png"
+                          alt="Taaza Bazar"
+                          style={{ width: '20px', height: '20px', borderRadius: '5px', objectFit: 'cover' }}
+                        />
+                        <span style={{ fontSize: '12px', fontWeight: '800', color: '#15803D' }}>
+                          Taaza Bazar
+                        </span>
+                      </div>
+                    ) : study.id === 'buildscape' ? (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '6px' }}>
+                        <img
+                          src="/projects/logos/buildscape.png"
+                          alt="Buildscape"
+                          style={{ height: '18px', width: 'auto', objectFit: 'contain' }}
+                        />
+                        <span style={{ fontSize: '12px', fontWeight: '800', color: '#92400E' }}>
+                          Buildscape
+                        </span>
+                      </div>
+                    ) : study.id === 'tapmenu' ? (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '6px' }}>
+                        <img
+                          src="/projects/logos/tapmenu.png"
+                          alt="TapMenu"
+                          style={{ height: '18px', width: 'auto', objectFit: 'contain' }}
+                        />
+                        <span style={{ fontSize: '12px', fontWeight: '800', color: '#4338CA' }}>
+                          TapMenu
+                        </span>
+                      </div>
+                    ) : study.logo ? (
+                      <img
+                        src={study.logo}
+                        alt={study.client}
+                        style={{
+                          height: '18px',
+                          width: 'auto',
+                          maxWidth: '100px',
+                          objectFit: 'contain',
+                          marginBottom: '6px'
+                        }}
+                      />
+                    ) : (
+                      <span style={{ fontSize: '12px', fontWeight: '800', color: '#0F172A', marginBottom: '6px', display: 'block' }}>
+                        {study.client}
+                      </span>
+                    )}
+
+                    <p
+                      style={{
+                        fontSize: '11px',
+                        fontWeight: '700',
+                        lineHeight: 1.35,
+                        color: '#1E293B',
+                        margin: 0,
+                        maxWidth: '145px'
+                      }}
+                    >
+                      {study.slogan}
+                    </p>
+                  </div>
+
+                  {/* Right: Phone Frame */}
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '90px',
+                      height: '154px',
+                      marginTop: '-40px',
+                      marginBottom: '-3px',
+                      flexShrink: 0,
+                      backgroundColor: '#0F172A',
+                      borderRadius: '16px',
+                      padding: '3px',
+                      boxShadow: '0 12px 22px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.15)',
+                      zIndex: 5,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '4px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '24px',
+                        height: '4px',
+                        backgroundColor: '#000000',
+                        borderRadius: '9999px',
+                        zIndex: 10
+                      }}
+                    />
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '13px',
+                        overflow: 'hidden',
+                        backgroundColor: '#000000'
+                      }}
+                    >
+                      <img
+                        src={study.image}
+                        alt={`${study.client} screen`}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile Bottom Action Button */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: '6px' }}>
+                <div
+                  style={{
+                    width: '36px',
+                    height: '36px',
                     borderRadius: '50%',
                     backgroundColor: study.textColor || '#0066FF',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    boxShadow: `0 3px 10px ${study.textColor || '#0066FF'}40`
                   }}
                 >
-                  <ArrowUpRight size={16} color="#ffffff" />
+                  <ArrowUpRight size={18} color="#ffffff" strokeWidth={2.4} />
                 </div>
               </div>
             </div>
