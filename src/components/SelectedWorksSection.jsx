@@ -527,15 +527,18 @@ export default function SelectedWorksSection() {
                         padding: '24px 24px 0 24px'
                       }}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', height: '40px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', height: '40px' }}>
                         {study.logo ? (
                           <img
                             src={study.logo}
                             alt={`${study.client} logo`}
                             style={{
-                              height: '36px',
+                              height: study.id === 'taazabazar' ? '38px' : '36px',
+                              width: study.id === 'taazabazar' ? '38px' : 'auto',
                               maxWidth: '160px',
-                              objectFit: 'contain'
+                              borderRadius: study.id === 'taazabazar' ? '9px' : '0px',
+                              objectFit: 'contain',
+                              boxShadow: study.id === 'taazabazar' ? '0 3px 10px rgba(0,0,0,0.35)' : 'none'
                             }}
                             onError={(e) => {
                               e.currentTarget.style.display = 'none';
@@ -545,6 +548,18 @@ export default function SelectedWorksSection() {
                             }}
                           />
                         ) : null}
+                        {study.id === 'taazabazar' && (
+                          <span
+                            style={{
+                              fontSize: '18px',
+                              fontWeight: '800',
+                              color: '#ffffff',
+                              letterSpacing: '-0.01em'
+                            }}
+                          >
+                            Taaza Bazar
+                          </span>
+                        )}
                         <span
                           style={{
                             display: study.logo ? 'none' : 'flex',
@@ -685,29 +700,42 @@ export default function SelectedWorksSection() {
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', height: '36px' }}>
-                {study.logo ? (
-                  <img
-                    src={study.logo}
-                    alt={study.client}
-                    style={{ height: '30px', maxWidth: '140px', objectFit: 'contain' }}
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      if (e.currentTarget.nextSibling) {
-                        e.currentTarget.nextSibling.style.display = 'inline-block';
-                      }
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  {study.logo ? (
+                    <img
+                      src={study.logo}
+                      alt={study.client}
+                      style={{
+                        height: study.id === 'taazabazar' ? '34px' : '30px',
+                        width: study.id === 'taazabazar' ? '34px' : 'auto',
+                        maxWidth: '140px',
+                        borderRadius: study.id === 'taazabazar' ? '8px' : '0px',
+                        objectFit: 'contain'
+                      }}
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        if (e.currentTarget.nextSibling) {
+                          e.currentTarget.nextSibling.style.display = 'inline-block';
+                        }
+                      }}
+                    />
+                  ) : null}
+                  {study.id === 'taazabazar' && (
+                    <span style={{ fontSize: '17px', fontWeight: '800', color: '#ffffff' }}>
+                      Taaza Bazar
+                    </span>
+                  )}
+                  <span
+                    style={{
+                      display: study.logo ? 'none' : 'inline-block',
+                      fontSize: '18px',
+                      fontWeight: '800',
+                      color: getTextColor(study.bg)
                     }}
-                  />
-                ) : null}
-                <span
-                  style={{
-                    display: study.logo ? 'none' : 'inline-block',
-                    fontSize: '18px',
-                    fontWeight: '800',
-                    color: getTextColor(study.bg)
-                  }}
-                >
-                  {study.client}
-                </span>
+                  >
+                    {study.client}
+                  </span>
+                </div>
                 <span style={{ fontSize: '12px', fontWeight: '700', fontFamily: 'monospace', color: getSubTextColor(study.bg) }}>
                   {String(idx + 1).padStart(2, '0')}
                 </span>
@@ -821,12 +849,19 @@ export default function SelectedWorksSection() {
               </span>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
               {activeModalCase.logo ? (
                 <img
                   src={activeModalCase.logo}
                   alt={`${activeModalCase.client} logo`}
-                  style={{ height: '36px', maxWidth: '180px', objectFit: 'contain' }}
+                  style={{
+                    height: activeModalCase.id === 'taazabazar' ? '44px' : '36px',
+                    width: activeModalCase.id === 'taazabazar' ? '44px' : 'auto',
+                    maxWidth: '180px',
+                    borderRadius: activeModalCase.id === 'taazabazar' ? '10px' : '0px',
+                    objectFit: 'contain',
+                    boxShadow: activeModalCase.id === 'taazabazar' ? '0 4px 12px rgba(0,0,0,0.35)' : 'none'
+                  }}
                 />
               ) : null}
               <h3
@@ -835,7 +870,7 @@ export default function SelectedWorksSection() {
                   fontWeight: '800',
                   color: '#fff',
                   margin: 0,
-                  display: activeModalCase.logo ? 'none' : 'block'
+                  display: activeModalCase.logo && activeModalCase.id !== 'taazabazar' ? 'none' : 'block'
                 }}
               >
                 {activeModalCase.client}

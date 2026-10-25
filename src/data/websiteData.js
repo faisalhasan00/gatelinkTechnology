@@ -48,7 +48,7 @@ export const CASE_STUDIES = [
     bg: '#0F2417',
     textColor: '#22C55E',
     image: '/projects/taazabazar.jpg',
-    logo: '/projects/logos/taazabazar.svg',
+    logo: '/projects/logos/taazabazar.png',
     detail_image: '/projects/taazabazar.jpg',
     slogan: 'Farm-Fresh Produce Delivered in 15 Minutes.',
     liveUrl: 'https://play.google.com/store/apps/details?id=com.taazabazar.app',
