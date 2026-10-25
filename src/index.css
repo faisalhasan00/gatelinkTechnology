@@ -1,0 +1,279 @@
+/* ==========================================================================
+   OZRIT - Enterprise Design System & Styling
+   Colors: OZRIT Signature Red (#ED0000, #dc2626, #b91c1c, #ef4444, #ffeded)
+   ========================================================================== */
+
+:root {
+  --oz-red: #ED0000;
+  --oz-red-hover: #c40000;
+  --oz-red-dark: #b91c1c;
+  --oz-red-light: #ef4444;
+  --oz-red-tint: #ffeded;
+  --oz-red-glow: 0 0 30px rgba(237, 0, 0, 0.35);
+
+  --gl-navy: #ED0000;
+  --gl-navy-hover: #dc2626;
+  --gl-navy-deep: #0a0a0a;
+  --gl-navy-dark: #121212;
+  --gl-navy-card: #141414;
+  --gl-sky: #ED0000;
+  --gl-sky-hover: #dc2626;
+  --gl-sky-light: #ef4444;
+  --gl-sky-100: #fee2e2;
+  --gl-sky-tint: #ffeded;
+  --gl-amber: #ED0000;
+  --gl-amber-hover: #dc2626;
+  --gl-amber-100: #fef2f2;
+  
+  --gl-bg-dark: #0a0a0a;
+  --gl-bg-black: #060606;
+  --gl-card-border: rgba(255, 255, 255, 0.08);
+  --gl-card-border-glow: rgba(237, 0, 0, 0.4);
+  --gl-cyan-glow: 0 0 30px rgba(237, 0, 0, 0.35);
+  
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--gl-bg-dark);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--gl-bg-dark);
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #b91c1c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ED0000;
+}
+
+/* OZRIT Buttons */
+.gl-btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.35);
+  text-decoration: none;
+}
+
+.gl-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(237, 0, 0, 0.55);
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.gl-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.gl-btn-primary .shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  transition: 0.75s;
+}
+
+.gl-btn-primary:hover .shimmer {
+  left: 150%;
+}
+
+.gl-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 14px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+
+.gl-btn-secondary:hover {
+  background: #ED0000;
+  border-color: #ED0000;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Infinite Marquee Animations */
+.og-track {
+  display: flex;
+  width: max-content;
+  animation: og-scroll 50s linear infinite;
+}
+
+.og-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes og-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.aso-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: aso-scroll 35s linear infinite;
+}
+
+.aso-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes aso-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Dual Testimonial Marquees */
+.review-track-left {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  animation: review-left 55s linear infinite;
+}
+
+.review-track-left:hover {
+  animation-play-state: paused;
+}
+
+.marquee-row-left, .review-track-left {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  animation: review-left 50s linear infinite;
+}
+
+.marquee-row-right, .review-track-right {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  animation: review-right 50s linear infinite;
+}
+
+.marquee-row-left:hover, .marquee-row-right:hover, .review-track-left:hover, .review-track-right:hover {
+  animation-play-state: paused;
+}
+
+@keyframes review-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes review-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+
+@media (min-width: 768px) {
+  .hidden-mobile-flex {
+    display: inline-flex !important;
+  }
+}
+
+/* Grid & Layout Responsive Helpers */
+.oz-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .oz-insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .oz-insights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.oz-process-timeline-desktop {
+  display: block;
+}
+
+.oz-process-timeline-mobile {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .oz-process-timeline-desktop {
+    display: none !important;
+  }
+  .oz-process-timeline-mobile {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .industries-grid-responsive {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-offices-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .og-track, .aso-track, .review-track-left, .review-track-right, .marquee-row-left, .marquee-row-right, .sphere-3d-ring {
+    animation: none;
+  }
+}
+
+
