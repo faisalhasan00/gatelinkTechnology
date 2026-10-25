@@ -8,7 +8,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const PARTICLE_COLORS = ['#ef4444', '#dc2626', '#f87171', '#b91c1c', '#ffffff'];
+const PARTICLE_COLORS = ['#00C2FF', '#0076FE', '#00E5FF', '#38BDF8', '#FF7A00', '#ffffff'];
 
 const SplitWords = ({ text }) => {
   return (
@@ -266,7 +266,7 @@ export default function FeaturedInsightsSection() {
       rotateY: 10 * nx,
       rotateX: -(8 * ny),
       y: -6,
-      boxShadow: `${16 * nx}px ${16 + 8 * ny}px 40px rgba(0, 0, 0, 0.4), 0 0 24px rgba(239, 68, 68, 0.12)`,
+      boxShadow: `${16 * nx}px ${16 + 8 * ny}px 40px rgba(0, 0, 0, 0.4), 0 0 24px rgba(0, 194, 255, 0.2)`,
       duration: 0.3,
       ease: 'power2.out',
       overwrite: 'auto'
@@ -338,10 +338,10 @@ export default function FeaturedInsightsSection() {
             />
             <defs>
               <linearGradient id="insightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#ef4444" stopOpacity="0.5" />
-                <stop offset="40%" stopColor="#dc2626" stopOpacity="0.7" />
-                <stop offset="70%" stopColor="#ef4444" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#b91c1c" stopOpacity="0.6" />
+                <stop offset="0%" stopColor="#0052CC" stopOpacity="0.5" />
+                <stop offset="40%" stopColor="#00C2FF" stopOpacity="0.95" />
+                <stop offset="70%" stopColor="#0076FE" stopOpacity="0.7" />
+                <stop offset="100%" stopColor="#00C2FF" stopOpacity="0.6" />
               </linearGradient>
             </defs>
           </svg>
@@ -356,8 +356,8 @@ export default function FeaturedInsightsSection() {
               width: '12px',
               height: '12px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, #ffffff 0%, #ef4444 50%, transparent 100%)',
-              boxShadow: '0 0 16px 6px rgba(239, 68, 68, 0.7), 0 0 40px 14px rgba(220, 38, 38, 0.4)',
+              background: 'radial-gradient(circle, #ffffff 0%, #00C2FF 50%, transparent 100%)',
+              boxShadow: '0 0 16px 6px rgba(0, 194, 255, 0.85), 0 0 40px 14px rgba(0, 102, 255, 0.55)',
               opacity: 0,
               pointerEvents: 'none'
             }}
@@ -373,7 +373,7 @@ export default function FeaturedInsightsSection() {
               width: '28px',
               height: '28px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(239, 68, 68, 0.4) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(0, 194, 255, 0.45) 0%, transparent 70%)',
               opacity: 0,
               filter: 'blur(5px)',
               pointerEvents: 'none'
@@ -526,7 +526,7 @@ export default function FeaturedInsightsSection() {
                     position: 'absolute',
                     inset: 0,
                     zIndex: 10,
-                    backgroundColor: article.accent || '#ef4444',
+                    backgroundColor: article.accent || '#00C2FF',
                     transformOrigin: 'right center'
                   }}
                 />
@@ -604,7 +604,7 @@ export default function FeaturedInsightsSection() {
                     style={{
                       fontSize: '11px',
                       fontWeight: '700',
-                      color: '#ef4444',
+                      color: '#00C2FF',
                       textTransform: 'uppercase',
                       letterSpacing: '0.12em',
                       marginBottom: '8px'
@@ -643,7 +643,7 @@ export default function FeaturedInsightsSection() {
                   }}
                 >
                   <span className="group-hover:text-white transition-colors duration-200">Read Article</span>
-                  <ArrowUpRight size={15} color="#ef4444" />
+                  <ArrowUpRight size={15} color="#00C2FF" />
                 </div>
               </div>
             </div>

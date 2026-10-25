@@ -1,35 +1,38 @@
 /* ==========================================================================
-   OZRIT - Enterprise Design System & Styling
-   Colors: OZRIT Signature Red (#ED0000, #dc2626, #b91c1c, #ef4444, #ffeded)
+   GateLink Technologies - Enterprise Design System & Styling
+   Brand Palette: Royal Blue (#0066FF, #0052CC), Electric Cyan (#00C2FF), Accent Orange (#FF7A00)
    ========================================================================== */
 
 :root {
-  --oz-red: #ED0000;
-  --oz-red-hover: #c40000;
-  --oz-red-dark: #b91c1c;
-  --oz-red-light: #ef4444;
-  --oz-red-tint: #ffeded;
-  --oz-red-glow: 0 0 30px rgba(237, 0, 0, 0.35);
-
-  --gl-navy: #ED0000;
-  --gl-navy-hover: #dc2626;
-  --gl-navy-deep: #0a0a0a;
-  --gl-navy-dark: #121212;
-  --gl-navy-card: #141414;
-  --gl-sky: #ED0000;
-  --gl-sky-hover: #dc2626;
-  --gl-sky-light: #ef4444;
-  --gl-sky-100: #fee2e2;
-  --gl-sky-tint: #ffeded;
-  --gl-amber: #ED0000;
-  --gl-amber-hover: #dc2626;
-  --gl-amber-100: #fef2f2;
+  --gl-primary: #0066FF;
+  --gl-primary-hover: #0052CC;
+  --gl-primary-dark: #003da5;
+  --gl-primary-light: #38bdf8;
+  --gl-cyan: #00C2FF;
+  --gl-cyan-light: #7dd3fc;
+  --gl-cyan-glow: 0 0 30px rgba(0, 194, 255, 0.45);
+  --gl-orange: #FF7A00;
+  --gl-orange-hover: #e06900;
   
-  --gl-bg-dark: #0a0a0a;
-  --gl-bg-black: #060606;
+  --gl-navy: #0066FF;
+  --gl-navy-hover: #0052CC;
+  --gl-navy-deep: #060b14;
+  --gl-navy-dark: #0b1120;
+  --gl-navy-card: #0f172a;
+  --gl-sky: #00C2FF;
+  --gl-sky-hover: #38bdf8;
+  --gl-sky-light: #7dd3fc;
+  --gl-sky-100: #e0f2fe;
+  --gl-sky-tint: #f0f9ff;
+  --gl-amber: #FF7A00;
+  --gl-amber-hover: #e06900;
+  --gl-amber-100: #fff7ed;
+  
+  --gl-bg-dark: #07090e;
+  --gl-bg-black: #040508;
   --gl-card-border: rgba(255, 255, 255, 0.08);
-  --gl-card-border-glow: rgba(237, 0, 0, 0.4);
-  --gl-cyan-glow: 0 0 30px rgba(237, 0, 0, 0.35);
+  --gl-card-border-glow: rgba(0, 194, 255, 0.4);
+  --gl-primary-glow: 0 0 30px rgba(0, 102, 255, 0.45);
   
   --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -67,24 +70,24 @@ h1, h2, h3, h4, h5, h6 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #07090e;
 }
 ::-webkit-scrollbar-thumb {
-  background: #b91c1c;
+  background: #0052CC;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ED0000;
+  background: #00C2FF;
 }
 
-/* OZRIT Buttons */
+/* GateLink Buttons */
 .gl-btn-primary {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  background: linear-gradient(135deg, #0052CC 0%, #0076FE 60%, #00C2FF 100%);
   color: #ffffff;
   font-weight: 600;
   border-radius: 9999px;
@@ -93,14 +96,14 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.45), 0 0 15px rgba(0, 194, 255, 0.3);
   text-decoration: none;
 }
 
 .gl-btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(237, 0, 0, 0.55);
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 8px 32px rgba(0, 102, 255, 0.65), 0 0 25px rgba(0, 194, 255, 0.5);
+  background: linear-gradient(135deg, #0066FF 0%, #0099FF 50%, #00C2FF 100%);
 }
 
 .gl-btn-primary:active {
@@ -113,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   transform: skewX(-20deg);
   transition: 0.75s;
 }
@@ -140,10 +143,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gl-btn-secondary:hover {
-  background: #ED0000;
-  border-color: #ED0000;
+  background: linear-gradient(135deg, #0052CC 0%, #0076FE 100%);
+  border-color: #00C2FF;
   color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.35);
 }
 
 /* Infinite Marquee Animations */

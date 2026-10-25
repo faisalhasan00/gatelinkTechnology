@@ -57,7 +57,7 @@ const SERVICE_PILLARS = [
   {
     title: 'Software Development',
     image: '/1.jpg',
-    icon: <Code2 size={24} color="#ED0000" />,
+    icon: <Code2 size={24} color="#00C2FF" />,
     description: 'End-to-end engineering for web, mobile, and enterprise platforms. We build resilient architectures that scale with zero compromise on speed.',
     highlights: ['Enterprise Platforms', 'Cloud Architecture', 'Microservices', 'API Ecosystems'],
     cta: 'Explore Software',
@@ -66,7 +66,7 @@ const SERVICE_PILLARS = [
   {
     title: 'Design & Digital',
     image: '/21.jpg',
-    icon: <Layout size={24} color="#ED0000" />,
+    icon: <Layout size={24} color="#00C2FF" />,
     description: 'Research-led product design and frontend engineering that turns complex workflows into intuitive, engaging user experiences.',
     highlights: ['Design Systems', 'Design Tokens', 'Human Interfaces', 'Accessibility'],
     cta: 'Explore Design',
@@ -75,7 +75,7 @@ const SERVICE_PILLARS = [
   {
     title: 'AI & ML',
     image: '/3.jpg',
-    icon: <Sparkles size={24} color="#ED0000" />,
+    icon: <Sparkles size={24} color="#FF7A00" />,
     description: 'Production-grade AI and ML systems including predictive models, generative AI, LLM fine-tuning, and intelligent automation pipelines.',
     highlights: ['Predictive Models', 'LLM Pipelines', 'Computer Vision', 'Agentic Systems'],
     cta: 'Explore AI & ML',
@@ -84,7 +84,7 @@ const SERVICE_PILLARS = [
   {
     title: 'Digital & Branding',
     image: '/4.jpg',
-    icon: <Megaphone size={24} color="#ED0000" />,
+    icon: <Megaphone size={24} color="#00C2FF" />,
     description: 'Performance marketing and brand programmes that compound over time. Data-informed creative that acquires, converts, and retains.',
     highlights: ['Brand Foundations', 'Growth Loops', 'Storytelling', 'Digital Signals'],
     cta: 'Explore Digital',
@@ -433,7 +433,7 @@ export default function StatementSection() {
                               color: '#ffffff'
                             }}
                           >
-                            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#ED0000' }} />
+                            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#00C2FF' }} />
                             {item}
                           </span>
                         ))}
@@ -508,7 +508,7 @@ export default function StatementSection() {
 
                 <a
                   href={service.href}
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#ED0000', fontSize: '14px', fontWeight: '700', textDecoration: 'none' }}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#00C2FF', fontSize: '14px', fontWeight: '700', textDecoration: 'none' }}
                 >
                   <span>{service.cta}</span>
                   <ArrowUpRight size={15} />

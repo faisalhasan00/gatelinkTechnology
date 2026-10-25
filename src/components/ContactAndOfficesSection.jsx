@@ -16,7 +16,7 @@ function triggerConfetti() {
   const w = (canvas.width = window.innerWidth);
   const h = (canvas.height = window.innerHeight);
 
-  const colors = ['#ED0000', '#dc2626', '#ef4444', '#b91c1c', '#ffffff', '#fca5a5'];
+  const colors = ['#0066FF', '#00C2FF', '#0052CC', '#38BDF8', '#FF7A00', '#ffffff'];
   const particles = Array.from({ length: 90 }).map(() => ({
     x: w / 2,
     y: h * 0.6,
@@ -110,7 +110,7 @@ export default function ContactAndOfficesSection() {
                 fontWeight: '800',
                 textTransform: 'uppercase',
                 letterSpacing: '0.22em',
-                color: '#ED0000',
+                color: '#00C2FF',
                 display: 'block',
                 marginBottom: '10px'
               }}
@@ -164,14 +164,14 @@ export default function ContactAndOfficesSection() {
                     width: '64px',
                     height: '64px',
                     borderRadius: '50%',
-                    backgroundColor: '#fee2e2',
+                    backgroundColor: '#e0f2fe',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 20px auto'
                   }}
                 >
-                  <CheckCircle2 size={36} color="#ED0000" />
+                  <CheckCircle2 size={36} color="#0066FF" />
                 </div>
                 <h3 style={{ fontSize: '24px', fontWeight: '800', color: '#111827', marginBottom: '12px' }}>
                   Enquiry Dispatched Successfully!
@@ -184,11 +184,12 @@ export default function ContactAndOfficesSection() {
                   style={{
                     padding: '12px 28px',
                     borderRadius: '9999px',
-                    background: '#ED0000',
+                    background: 'linear-gradient(135deg, #0052CC 0%, #0076FE 60%, #00C2FF 100%)',
                     color: '#fff',
                     border: 'none',
                     fontWeight: '700',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 15px rgba(0, 102, 255, 0.35)'
                   }}
                 >
                   Submit Another Project
@@ -219,7 +220,7 @@ export default function ContactAndOfficesSection() {
                       outline: 'none',
                       transition: 'border-color 0.2s'
                     }}
-                    onFocus={(e) => (e.currentTarget.style.borderColor = '#ED0000')}
+                    onFocus={(e) => (e.currentTarget.style.borderColor = '#0066FF')}
                     onBlur={(e) => (e.currentTarget.style.borderColor = '#d1d5db')}
                   />
                 </div>
@@ -248,7 +249,7 @@ export default function ContactAndOfficesSection() {
                         outline: 'none',
                         transition: 'border-color 0.2s'
                       }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = '#ED0000')}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = '#0066FF')}
                       onBlur={(e) => (e.currentTarget.style.borderColor = '#d1d5db')}
                     />
                   </div>
@@ -291,7 +292,7 @@ export default function ContactAndOfficesSection() {
                           outline: 'none',
                           transition: 'border-color 0.2s'
                         }}
-                        onFocus={(e) => (e.currentTarget.style.borderColor = '#ED0000')}
+                        onFocus={(e) => (e.currentTarget.style.borderColor = '#0066FF')}
                         onBlur={(e) => (e.currentTarget.style.borderColor = '#d1d5db')}
                       />
                     </div>
@@ -354,7 +355,7 @@ export default function ContactAndOfficesSection() {
                       fontFamily: 'inherit',
                       transition: 'border-color 0.2s'
                     }}
-                    onFocus={(e) => (e.currentTarget.style.borderColor = '#ED0000')}
+                    onFocus={(e) => (e.currentTarget.style.borderColor = '#0066FF')}
                     onBlur={(e) => (e.currentTarget.style.borderColor = '#d1d5db')}
                   />
                 </div>
@@ -370,16 +371,23 @@ export default function ContactAndOfficesSection() {
                       gap: '8px',
                       padding: '14px 36px',
                       borderRadius: '12px',
-                      backgroundColor: '#ED0000',
+                      background: 'linear-gradient(135deg, #0052CC 0%, #0076FE 60%, #00C2FF 100%)',
                       color: '#ffffff',
                       border: 'none',
                       fontSize: '15px',
                       fontWeight: '700',
                       cursor: 'pointer',
-                      transition: 'all 0.25s ease'
+                      transition: 'all 0.25s ease',
+                      boxShadow: '0 4px 15px rgba(0, 102, 255, 0.4)'
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#dc2626')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#ED0000')}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-1px)';
+                      e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 102, 255, 0.55)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'none';
+                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 102, 255, 0.4)';
+                    }}
                   >
                     <span>{loading ? 'Submitting...' : 'Submit'}</span>
                     <ArrowRight size={16} color="#ffffff" />
@@ -436,13 +444,13 @@ export default function ContactAndOfficesSection() {
                   gap: '8px',
                   padding: '6px 14px',
                   borderRadius: '9999px',
-                  backgroundColor: 'rgba(237, 0, 0, 0.2)',
-                  border: '1px solid rgba(237, 0, 0, 0.4)',
+                  backgroundColor: 'rgba(0, 102, 255, 0.2)',
+                  border: '1px solid rgba(0, 194, 255, 0.45)',
                   backdropFilter: 'blur(8px)',
                   marginBottom: '16px'
                 }}
               >
-                <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#22c55e', display: 'inline-block' }} />
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#00C2FF', display: 'inline-block' }} />
                 <span style={{ fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#ffffff' }}>
                   CENTRAL ENGINEERING CAMPUS
                 </span>
@@ -451,7 +459,7 @@ export default function ContactAndOfficesSection() {
               <h3 style={{ fontSize: '36px', fontWeight: '900', color: '#ffffff', letterSpacing: '-0.02em', margin: 0 }}>
                 {HYDERABAD_HEADQUARTERS.city}
               </h3>
-              <div style={{ fontSize: '14px', fontWeight: '700', color: '#ef4444', marginTop: '4px' }}>
+              <div style={{ fontSize: '14px', fontWeight: '700', color: '#00C2FF', marginTop: '4px' }}>
                 {HYDERABAD_HEADQUARTERS.building}
               </div>
             </div>
@@ -460,28 +468,28 @@ export default function ContactAndOfficesSection() {
             <div style={{ position: 'relative', zIndex: 2, padding: '0 32px 32px 32px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '28px' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <MapPin size={18} color="#ED0000" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <MapPin size={18} color="#00C2FF" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.5 }}>
                     {HYDERABAD_HEADQUARTERS.address}
                   </span>
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <Phone size={16} color="#ED0000" />
+                  <Phone size={16} color="#00C2FF" />
                   <a href={`tel:${HYDERABAD_HEADQUARTERS.phone}`} style={{ fontSize: '14px', color: '#ffffff', textDecoration: 'none', fontWeight: '600' }}>
                     {HYDERABAD_HEADQUARTERS.phone}
                   </a>
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <Mail size={16} color="#ED0000" />
+                  <Mail size={16} color="#00C2FF" />
                   <a href={`mailto:${HYDERABAD_HEADQUARTERS.email}`} style={{ fontSize: '14px', color: '#ffffff', textDecoration: 'none', fontWeight: '600' }}>
                     {HYDERABAD_HEADQUARTERS.email}
                   </a>
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <Clock size={16} color="#ED0000" />
+                  <Clock size={16} color="#00C2FF" />
                   <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.65)' }}>
                     {HYDERABAD_HEADQUARTERS.workingHours}
                   </span>
@@ -508,8 +516,8 @@ export default function ContactAndOfficesSection() {
                   transition: 'all 0.25s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#ED0000';
-                  e.currentTarget.style.borderColor = '#ED0000';
+                  e.currentTarget.style.backgroundColor = '#0066FF';
+                  e.currentTarget.style.borderColor = '#00C2FF';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';

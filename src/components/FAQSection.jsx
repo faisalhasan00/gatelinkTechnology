@@ -39,7 +39,7 @@ export default function FAQSection() {
                 fontWeight: '800',
                 textTransform: 'uppercase',
                 letterSpacing: '0.22em',
-                color: '#ED0000',
+                color: '#00C2FF',
                 display: 'block',
                 marginBottom: '14px'
               }}
@@ -69,7 +69,7 @@ export default function FAQSection() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '36px' }}>
               {FAQ_METRICS.map((m, mIdx) => (
                 <div key={mIdx} style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '14px', padding: '16px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '24px', fontWeight: '800', color: '#ED0000' }}>{m.value}</div>
+                  <div style={{ fontSize: '24px', fontWeight: '800', color: '#00C2FF' }}>{m.value}</div>
                   <div style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.6)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: '4px' }}>{m.label}</div>
                 </div>
               ))}
@@ -78,13 +78,13 @@ export default function FAQSection() {
             {/* Have a question CTA Card */}
             <div
               style={{
-                background: 'linear-gradient(145deg, rgba(237, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%)',
-                border: '1px solid rgba(237, 0, 0, 0.25)',
+                background: 'linear-gradient(145deg, rgba(0, 102, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                border: '1px solid rgba(0, 194, 255, 0.3)',
                 borderRadius: '18px',
                 padding: '24px'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ef4444', marginBottom: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#00C2FF', marginBottom: '8px' }}>
                 <MessageSquare size={16} />
                 <span style={{ fontSize: '12px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                   Have a specific question?
@@ -116,7 +116,7 @@ export default function FAQSection() {
                 >
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '20px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '20px' }}>
-                      <span style={{ fontSize: '13px', fontWeight: '700', color: '#ef4444', minWidth: '24px' }}>
+                      <span style={{ fontSize: '13px', fontWeight: '700', color: '#00C2FF', minWidth: '24px' }}>
                         {faq.num}
                       </span>
                       <h3
@@ -137,9 +137,9 @@ export default function FAQSection() {
                         width: '32px',
                         height: '32px',
                         borderRadius: '50%',
-                        backgroundColor: isOpen ? '#ED0000' : 'rgba(255, 255, 255, 0.05)',
+                        backgroundColor: isOpen ? '#0066FF' : 'rgba(255, 255, 255, 0.05)',
                         border: '1px solid',
-                        borderColor: isOpen ? '#ED0000' : 'rgba(255, 255, 255, 0.15)',
+                        borderColor: isOpen ? '#00C2FF' : 'rgba(255, 255, 255, 0.15)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',

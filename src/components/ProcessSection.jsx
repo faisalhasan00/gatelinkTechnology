@@ -57,7 +57,7 @@ export default function ProcessSection() {
           width: '80%',
           height: '60%',
           borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(239, 68, 68, 0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(0, 194, 255, 0.06) 0%, transparent 70%)',
           pointerEvents: 'none'
         }}
       />
@@ -101,11 +101,11 @@ export default function ProcessSection() {
             >
               <defs>
                 <linearGradient id="liveProcessGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#ef4444" stopOpacity="0.8" />
-                  <stop offset="25%" stopColor="#dc2626" stopOpacity="0.6" />
-                  <stop offset="50%" stopColor="#ef4444" stopOpacity="0.85" />
-                  <stop offset="75%" stopColor="#dc2626" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#ef4444" stopOpacity="0.8" />
+                  <stop offset="0%" stopColor="#0052CC" stopOpacity="0.8" />
+                  <stop offset="25%" stopColor="#00C2FF" stopOpacity="0.75" />
+                  <stop offset="50%" stopColor="#0076FE" stopOpacity="0.9" />
+                  <stop offset="75%" stopColor="#00C2FF" stopOpacity="0.75" />
+                  <stop offset="100%" stopColor="#0052CC" stopOpacity="0.8" />
                 </linearGradient>
               </defs>
               <path
@@ -155,7 +155,7 @@ export default function ProcessSection() {
                         position: 'absolute',
                         inset: '-12px',
                         borderRadius: '50%',
-                        background: 'radial-gradient(circle, rgba(239, 68, 68, 0.45) 0%, transparent 70%)',
+                        background: 'radial-gradient(circle, rgba(0, 194, 255, 0.45) 0%, transparent 70%)',
                         opacity: isHovered ? 1 : 0.4,
                         transform: isHovered ? 'scale(1.25)' : 'scale(1)',
                         transition: 'all 0.3s ease',
@@ -170,12 +170,12 @@ export default function ProcessSection() {
                         height: '54px',
                         borderRadius: '50%',
                         backgroundColor: '#0a0a0a',
-                        border: isHovered ? '1.5px solid #ef4444' : '1.5px solid rgba(255, 255, 255, 0.18)',
+                        border: isHovered ? '1.5px solid #00C2FF' : '1.5px solid rgba(255, 255, 255, 0.18)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         boxShadow: isHovered
-                          ? '0 0 20px rgba(239, 68, 68, 0.6)'
+                          ? '0 0 20px rgba(0, 194, 255, 0.6)'
                           : '0 4px 15px rgba(0, 0, 0, 0.5)',
                         transition: 'all 0.3s ease'
                       }}
@@ -198,7 +198,7 @@ export default function ProcessSection() {
                       style={{
                         fontSize: '15px',
                         fontWeight: '700',
-                        color: isHovered ? '#ef4444' : '#ffffff',
+                        color: isHovered ? '#00C2FF' : '#ffffff',
                         marginBottom: '6px',
                         transition: 'color 0.25s ease'
                       }}
@@ -233,8 +233,8 @@ export default function ProcessSection() {
               top: '12px',
               bottom: '12px',
               width: '2px',
-              background: 'linear-gradient(to bottom, #ef4444, #dc2626, #b91c1c)',
-              opacity: 0.4
+              background: 'linear-gradient(to bottom, #00C2FF, #0076FE, #0052CC)',
+              opacity: 0.5
             }}
           />
 
@@ -250,14 +250,14 @@ export default function ProcessSection() {
                   height: '38px',
                   borderRadius: '50%',
                   backgroundColor: '#0a0a0a',
-                  border: '1px solid rgba(239, 68, 68, 0.4)',
+                  border: '1px solid rgba(0, 194, 255, 0.45)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 4px 12px rgba(239, 68, 68, 0.25)'
+                  boxShadow: '0 4px 12px rgba(0, 102, 255, 0.3)'
                 }}
               >
-                <span style={{ fontSize: '12px', fontWeight: '800', color: '#ef4444' }}>
+                <span style={{ fontSize: '12px', fontWeight: '800', color: '#00C2FF' }}>
                   {step.num}
                 </span>
               </div>

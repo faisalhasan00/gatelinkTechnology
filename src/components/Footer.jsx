@@ -93,8 +93,8 @@ export default function Footer() {
                   transition: 'all 0.25s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(237, 0, 0, 0.3)';
-                  e.currentTarget.style.background = 'rgba(237, 0, 0, 0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 194, 255, 0.45)';
+                  e.currentTarget.style.background = 'rgba(0, 102, 255, 0.08)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.07)';
@@ -170,8 +170,8 @@ export default function Footer() {
                   transition: 'all 0.25s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#ED0000';
-                  e.currentTarget.style.borderColor = '#ED0000';
+                  e.currentTarget.style.backgroundColor = '#0066FF';
+                  e.currentTarget.style.borderColor = '#00C2FF';
                   e.currentTarget.style.color = '#ffffff';
                 }}
                 onMouseLeave={(e) => {

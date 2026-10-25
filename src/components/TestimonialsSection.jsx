@@ -24,8 +24,8 @@ export default function TestimonialsSection() {
         transition: 'border-color 0.3s, background 0.3s'
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = 'rgba(237, 0, 0, 0.4)';
-        e.currentTarget.style.background = 'rgba(237, 0, 0, 0.04)';
+        e.currentTarget.style.borderColor = 'rgba(0, 194, 255, 0.45)';
+        e.currentTarget.style.background = 'rgba(0, 102, 255, 0.05)';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.07)';
@@ -113,7 +113,7 @@ export default function TestimonialsSection() {
             fontWeight: '700',
             textTransform: 'uppercase',
             letterSpacing: '0.22em',
-            color: '#ef4444',
+            color: '#00C2FF',
             display: 'block',
             marginBottom: '10px'
           }}

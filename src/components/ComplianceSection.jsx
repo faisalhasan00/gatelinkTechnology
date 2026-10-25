@@ -16,7 +16,7 @@ export default function ComplianceSection() {
         position: 'relative',
         width: '100%',
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 45%, #b91c1c 100%)',
+        background: 'linear-gradient(135deg, #003da5 0%, #0052CC 45%, #002B7A 100%)',
         color: '#ffffff',
         padding: '100px 24px 120px 24px'
       }}

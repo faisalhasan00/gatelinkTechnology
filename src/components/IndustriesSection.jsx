@@ -240,7 +240,7 @@ export default function IndustriesSection() {
                     fontWeight: '700',
                     textTransform: 'uppercase',
                     letterSpacing: '0.25em',
-                    color: '#f87171',
+                    color: '#00C2FF',
                     marginBottom: '10px'
                   }}
                 >
@@ -396,8 +396,8 @@ export default function IndustriesSection() {
                           width: '10px',
                           height: '10px',
                           borderRadius: '50%',
-                          backgroundColor: '#ef4444',
-                          boxShadow: '0 0 14px 2px rgba(239, 68, 68, 0.7)',
+                          backgroundColor: '#00C2FF',
+                          boxShadow: '0 0 14px 4px rgba(0, 194, 255, 0.75)',
                           display: 'inline-block',
                           opacity: isSelected ? 1 : 0,
                           transform: isSelected ? 'scale(1)' : 'scale(0)',

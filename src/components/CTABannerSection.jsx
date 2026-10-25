@@ -7,7 +7,7 @@ export default function CTABannerSection() {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#ED0000',
+        background: 'linear-gradient(135deg, #002B7A 0%, #0052CC 45%, #0076FE 80%, #00C2FF 100%)',
         color: '#ffffff',
         padding: '90px 24px 96px 24px',
         overflow: 'hidden',

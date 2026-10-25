@@ -19,7 +19,7 @@ export default function CultureGallerySection() {
         position: 'relative',
         width: '100%',
         overflow: 'hidden',
-        backgroundColor: '#ffeded',
+        backgroundColor: '#f0f7ff',
         paddingTop: '80px',
         paddingBottom: '90px'
       }}
@@ -33,7 +33,7 @@ export default function CultureGallerySection() {
             fontWeight: '700',
             textTransform: 'uppercase',
             letterSpacing: '0.2em',
-            color: '#ED0000'
+            color: '#0066FF'
           }}
         >
           Inside GateLink
@@ -44,7 +44,7 @@ export default function CultureGallerySection() {
             fontSize: 'clamp(2rem, 3.8vw, 3rem)',
             fontWeight: '800',
             letterSpacing: '-0.025em',
-            color: '#1a1010',
+            color: '#0f172a',
             lineHeight: 1.15,
             margin: '0 0 16px 0'
           }}

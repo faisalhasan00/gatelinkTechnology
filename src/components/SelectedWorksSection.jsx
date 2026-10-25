@@ -397,8 +397,8 @@ export default function SelectedWorksSection() {
               transition: 'all 0.2s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#ED0000';
-              e.currentTarget.style.borderColor = '#ED0000';
+              e.currentTarget.style.backgroundColor = '#0066FF';
+              e.currentTarget.style.borderColor = '#00C2FF';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
@@ -424,8 +424,8 @@ export default function SelectedWorksSection() {
               transition: 'all 0.2s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#ED0000';
-              e.currentTarget.style.borderColor = '#ED0000';
+              e.currentTarget.style.backgroundColor = '#0066FF';
+              e.currentTarget.style.borderColor = '#00C2FF';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
@@ -629,7 +629,7 @@ export default function SelectedWorksSection() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        backgroundColor: study.textColor || '#ED0000',
+                        backgroundColor: study.textColor || '#0066FF',
                         boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
                       }}
                     >
@@ -706,7 +706,7 @@ export default function SelectedWorksSection() {
                     width: '32px',
                     height: '32px',
                     borderRadius: '50%',
-                    backgroundColor: study.textColor || '#ED0000',
+                    backgroundColor: study.textColor || '#0066FF',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -739,15 +739,15 @@ export default function SelectedWorksSection() {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: '#111827',
-              border: '1px solid rgba(237, 0, 0, 0.4)',
+              background: '#0b1120',
+              border: '1px solid rgba(0, 194, 255, 0.35)',
               borderRadius: '24px',
               maxWidth: '720px',
               width: '100%',
               maxHeight: '90vh',
               overflowY: 'auto',
               padding: '38px',
-              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(237, 0, 0, 0.2)',
+              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 102, 255, 0.25)',
               position: 'relative'
             }}
           >
@@ -774,8 +774,8 @@ export default function SelectedWorksSection() {
             </button>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ED0000' }} />
-              <span style={{ fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#ef4444' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#00C2FF' }} />
+              <span style={{ fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#00C2FF' }}>
                 {activeModalCase.category} · Case Study {activeModalCase.num}
               </span>
             </div>
@@ -784,7 +784,7 @@ export default function SelectedWorksSection() {
               {activeModalCase.client}
             </h3>
 
-            <div style={{ fontSize: '16px', color: '#ef4444', fontWeight: '700', marginBottom: '20px' }}>
+            <div style={{ fontSize: '16px', color: '#38bdf8', fontWeight: '700', marginBottom: '20px' }}>
               {activeModalCase.slogan}
             </div>
 
@@ -797,7 +797,7 @@ export default function SelectedWorksSection() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '28px' }}>
                 {activeModalCase.metrics.map((m, mIdx) => (
                   <div key={mIdx} style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '16px', textAlign: 'center' }}>
-                    <div style={{ fontSize: '26px', fontWeight: '800', color: '#ED0000' }}>{m.value}</div>
+                    <div style={{ fontSize: '26px', fontWeight: '800', color: '#00C2FF' }}>{m.value}</div>
                     <div style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.6)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: '4px' }}>{m.label}</div>
                   </div>
                 ))}
@@ -806,8 +806,8 @@ export default function SelectedWorksSection() {
 
             {/* Founder Quote */}
             {activeModalCase.quote && (
-              <div style={{ background: 'rgba(237, 0, 0, 0.08)', borderLeft: '3px solid #ED0000', padding: '16px 20px', borderRadius: '0 12px 12px 0', marginBottom: '28px' }}>
-                <p style={{ fontStyle: 'italic', color: '#fca5a5', fontSize: '14px', lineHeight: 1.6, margin: '0 0 8px 0' }}>
+              <div style={{ background: 'rgba(0, 102, 255, 0.08)', borderLeft: '3px solid #00C2FF', padding: '16px 20px', borderRadius: '0 12px 12px 0', marginBottom: '28px' }}>
+                <p style={{ fontStyle: 'italic', color: '#e0f2fe', fontSize: '14px', lineHeight: 1.6, margin: '0 0 8px 0' }}>
                   "{activeModalCase.quote.text}"
                 </p>
                 <div style={{ fontSize: '12px', fontWeight: '700', color: '#ffffff' }}>
@@ -821,7 +821,7 @@ export default function SelectedWorksSection() {
             </h4>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
               {activeModalCase.tags.map((t, idx) => (
-                <span key={idx} style={{ background: 'rgba(237, 0, 0, 0.12)', border: '1px solid rgba(237, 0, 0, 0.3)', color: '#fca5a5', padding: '6px 14px', borderRadius: '8px', fontSize: '13px', fontWeight: '600' }}>
+                <span key={idx} style={{ background: 'rgba(0, 102, 255, 0.15)', border: '1px solid rgba(0, 194, 255, 0.35)', color: '#bae6fd', padding: '6px 14px', borderRadius: '8px', fontSize: '13px', fontWeight: '600' }}>
                   {t}
                 </span>
               ))}

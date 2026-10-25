@@ -83,7 +83,7 @@ export default function AIEcosystemSection() {
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(to right, rgba(185, 28, 28, 0.15), transparent 70%, rgba(185, 28, 28, 0.1))'
+              background: 'linear-gradient(to right, rgba(0, 102, 255, 0.15), transparent 70%, rgba(0, 194, 255, 0.12))'
             }}
           />
           {/* Edge fade to #070707 for desktop */}

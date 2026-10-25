@@ -25,7 +25,7 @@ export default function OfficesSection() {
               fontWeight: '600',
               textTransform: 'uppercase',
               letterSpacing: '0.15em',
-              color: '#ef4444',
+              color: '#00C2FF',
               display: 'block',
               marginBottom: '12px'
             }}
@@ -62,7 +62,7 @@ export default function OfficesSection() {
               cursor: 'pointer',
               textDecoration: 'none',
               boxShadow: isHovered
-                ? '0 25px 50px -12px rgba(237, 0, 0, 0.25), 0 0 0 1px rgba(237, 0, 0, 0.3)'
+                ? '0 25px 50px -12px rgba(0, 102, 255, 0.35), 0 0 0 1px rgba(0, 194, 255, 0.45)'
                 : '0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08)',
               transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
@@ -135,7 +135,7 @@ export default function OfficesSection() {
                 style={{
                   fontSize: '24px',
                   fontWeight: '700',
-                  color: isHovered ? '#ff4d4d' : '#ffffff',
+                  color: isHovered ? '#00C2FF' : '#ffffff',
                   marginBottom: '8px',
                   lineHeight: 1.2,
                   transition: 'color 0.3s ease'
