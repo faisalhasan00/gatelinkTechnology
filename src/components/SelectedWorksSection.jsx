@@ -791,6 +791,7 @@ export default function SelectedWorksSection() {
                               width: '100%',
                               height: '100%',
                               objectFit: 'cover',
+                              objectPosition: 'top center',
                               display: 'block'
                             }}
                           />
@@ -1047,7 +1048,7 @@ export default function SelectedWorksSection() {
                       <img
                         src={study.image}
                         alt={`${study.client} screen`}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
                       />
                     </div>
                   </div>
