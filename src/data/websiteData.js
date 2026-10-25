@@ -5,27 +5,37 @@ export const CASE_STUDIES = [
   {
     id: 'matchpoint',
     num: '01',
-    client: 'Match Point AI',
-    category: 'AI Recruiting & Workforce Intelligence',
-    description: 'Manual resume screening and recruiter bias slow hiring velocity. Match Point AI delivers autonomous candidate sourcing, multi-dimensional skill evaluation, and real-time interview intelligence to place elite talent faster.',
-    bg_color: '#0D1B2A',
-    bg: '#0D1B2A',
+    client: 'MatchPoint AI',
+    category: 'FinTech | Investment Intelligence & Venture Capital',
+    description: 'AI-powered investment intelligence platform designed to help startup founders and investors make data-driven decisions. Unifies startup analytics, financial indicators, market intelligence, and investment opportunity analysis in an interactive digital experience.',
+    problem: 'Evaluating startups and identifying suitable investment opportunities requires significant research and manual analysis. MatchPoint AI organizes business data, analyzes key financial metrics, and delivers actionable insights through an intelligent analytics platform.',
+    contribution: 'Digital product experience, interactive analytics dashboard, frontend engineering, and backend application architecture.',
+    capabilities: [
+      'AI-Powered Analysis: Generate insights from startup & business data',
+      'Investment Intelligence: Comprehensive evaluation of deal flow & investment opportunities',
+      'Interactive Analytics Dashboard: Financial indicators & market insights with Recharts & Three.js',
+      'Startup Valuation: Growth potential, unit economics, and investment readiness scores',
+      'Market Intelligence: Competitor benchmarking and market opportunity analysis',
+      'Data-Driven Decision Support: Making complex venture financials transparent and actionable'
+    ],
+    bg_color: '#0A1A2F',
+    bg: '#0A1A2F',
     textColor: '#00D9F5',
     image: '/projects/matchpoint.jpg',
     logo: '',
     detail_image: '/projects/matchpoint.jpg',
-    slogan: 'Next-Gen AI Matching for High-Velocity Hiring.',
+    slogan: 'AI-Powered Investment Intelligence Platform for Founders & Investors.',
     liveUrl: 'https://www.matchpoint-ai.co/',
-    tags: ['React', 'Python', 'FastAPI', 'Vector Search', 'OpenAI', 'AWS'],
+    tags: ['React.js', 'Vite', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Recharts', 'Three.js', 'Python', 'Django'],
     metrics: [
-      { value: '65%', label: 'Faster Time-to-Hire' },
-      { value: '4.8x', label: 'Match Accuracy' },
-      { value: '80k+', label: 'Profiles Evaluated' }
+      { value: '10x', label: 'Faster Due Diligence' },
+      { value: '360°', label: 'Financial & Growth Analytics' },
+      { value: '94%', label: 'Investment Insight Accuracy' }
     ],
     quote: {
-      name: 'Match Point Leadership',
-      title: 'Founding Team, Match Point AI',
-      text: 'GateLink built our autonomous AI talent screening engine with exceptional speed, precision, and engineering excellence.'
+      name: 'MatchPoint Leadership',
+      title: 'Founding Team, MatchPoint AI',
+      text: 'GateLink engineered our digital product experience, interactive analytics dashboard, and robust Python/Django backend architecture with remarkable speed and precision.'
     }
   },
   {
@@ -323,10 +333,10 @@ export const TRUSTED_PARTNERS = [
 // Testimonials from GateLink Technology Clients
 export const TESTIMONIALS = [
   {
-    quote: 'GateLink built our autonomous AI talent screening engine with exceptional speed, vector precision, and engineering excellence.',
-    author: 'Match Point Leadership',
+    quote: 'GateLink engineered our digital product experience, interactive analytics dashboard, and robust Python/Django backend architecture with remarkable speed and precision.',
+    author: 'MatchPoint Leadership',
     role: 'Founding Team',
-    company: 'Match Point AI',
+    company: 'MatchPoint AI',
     initial: 'M'
   },
   {

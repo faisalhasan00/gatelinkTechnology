@@ -840,9 +840,49 @@ export default function SelectedWorksSection() {
               </div>
             )}
 
-            <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.7, marginBottom: '28px' }}>
+            <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.7, marginBottom: '22px' }}>
               {activeModalCase.description}
             </p>
+
+            {/* Problem & Contribution Highlights */}
+            {activeModalCase.problem && (
+              <div style={{ marginBottom: '18px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '14px 18px' }}>
+                <div style={{ fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#38bdf8', marginBottom: '5px' }}>
+                  The Problem It Solves
+                </div>
+                <p style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.6, margin: 0 }}>
+                  {activeModalCase.problem}
+                </p>
+              </div>
+            )}
+
+            {activeModalCase.contribution && (
+              <div style={{ marginBottom: '22px', background: 'rgba(0, 194, 255, 0.06)', border: '1px solid rgba(0, 194, 255, 0.25)', borderRadius: '12px', padding: '14px 18px' }}>
+                <div style={{ fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#00C2FF', marginBottom: '5px' }}>
+                  Our Engineering Contribution
+                </div>
+                <p style={{ fontSize: '13.5px', color: '#e0f2fe', lineHeight: 1.6, margin: 0 }}>
+                  {activeModalCase.contribution}
+                </p>
+              </div>
+            )}
+
+            {/* Key Capabilities */}
+            {activeModalCase.capabilities && activeModalCase.capabilities.length > 0 && (
+              <div style={{ marginBottom: '24px' }}>
+                <h4 style={{ fontSize: '12.5px', fontWeight: '700', color: '#fff', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  Key Capabilities
+                </h4>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '8px' }}>
+                  {activeModalCase.capabilities.map((cap, cIdx) => (
+                    <div key={cIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '12.5px', color: 'rgba(255, 255, 255, 0.85)', background: 'rgba(255, 255, 255, 0.03)', padding: '8px 12px', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.06)' }}>
+                      <span style={{ color: '#00C2FF', fontWeight: 'bold' }}>•</span>
+                      <span>{cap}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Impact Metrics */}
             {activeModalCase.metrics && (
