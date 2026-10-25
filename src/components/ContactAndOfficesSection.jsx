@@ -126,7 +126,7 @@ export default function ContactAndOfficesSection() {
                 margin: 0
               }}
             >
-              Collaborate with OZRIT
+              Collaborate with GateLink
             </h2>
           </div>
 
@@ -177,7 +177,7 @@ export default function ContactAndOfficesSection() {
                   Enquiry Dispatched Successfully!
                 </h3>
                 <p style={{ fontSize: '15px', color: '#4b5563', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto 28px auto' }}>
-                  Thank you, <strong>{formData.name}</strong>. An OZRIT engineering lead will review your project requirements and connect within 4 business hours.
+                  Thank you, <strong>{formData.name}</strong>. A GateLink engineering lead will review your project requirements and connect within 4 business hours.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}

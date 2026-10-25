@@ -833,7 +833,7 @@ export default function SelectedWorksSection() {
               className="gl-btn-primary"
               style={{ width: '100%', justifyContent: 'center' }}
             >
-              <span>Discuss Similar Solution with OZRIT</span>
+              <span>Discuss Similar Solution with GateLink</span>
               <ArrowUpRight size={18} />
             </a>
           </div>

@@ -42,7 +42,7 @@ export default function PressSection() {
             margin: '0 0 14px 0'
           }}
         >
-          OZRIT in the press
+          GateLink in the press
         </h2>
         <p style={{ fontSize: '17px', color: '#555555', lineHeight: 1.6 }}>
           Our work and our team have been featured across leading technology and business publications.

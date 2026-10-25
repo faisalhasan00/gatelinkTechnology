@@ -457,7 +457,7 @@ export const HYDERABAD_HEADQUARTERS = {
   building: 'Vasavi Sky City',
   address: '1009, 10th Floor, Vasavi Sky City, Gachibowli, Hyderabad, Telangana 500032',
   phone: '+91 91777 56789',
-  email: 'contact@ozrit.com',
+  email: 'contact@gatelinktechnology.com',
   workingHours: 'Mon - Fri: 9:00 AM - 7:00 PM IST',
   image: '/hyd.webp',
   mapsUrl: 'https://maps.app.goo.gl/NaRz9ELh7N6Px4nV9'

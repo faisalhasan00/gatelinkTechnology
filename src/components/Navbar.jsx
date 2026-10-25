@@ -140,60 +140,21 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               textDecoration: 'none',
-              height: '36px'
+              height: '42px'
             }}
           >
             <img
-              src="https://vibemart-ozrit.b-cdn.net/ozrit-website-logos/LOGO/OZRIT_logo_Alpha.svg"
-              alt="OZRIT Logo"
+              src="/gatelink-logo.png"
+              alt="GateLink Technologies"
               style={{
-                height: '34px',
+                height: '38px',
                 width: 'auto',
-                maxHeight: '34px',
-                maxWidth: '180px',
+                maxHeight: '38px',
+                maxWidth: '220px',
                 objectFit: 'contain',
                 display: 'block'
               }}
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.nextSibling.style.display = 'flex';
-              }}
             />
-            {/* Fallback branded text mark */}
-            <div
-              style={{
-                display: 'none',
-                alignItems: 'center',
-                gap: '8px'
-              }}
-            >
-              <div
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '6px',
-                  backgroundColor: '#ED0000',
-                  color: '#ffffff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: '900',
-                  fontSize: '18px'
-                }}
-              >
-                O
-              </div>
-              <span
-                style={{
-                  fontSize: '22px',
-                  fontWeight: '900',
-                  color: '#000000',
-                  letterSpacing: '-0.02em'
-                }}
-              >
-                OZRIT
-              </span>
-            </div>
           </a>
 
           {/* Desktop Navigation Links */}
@@ -584,7 +545,7 @@ export default function Navbar() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <a
               href="tel:+917382373824"
-              aria-label="Call OZRIT at +91 7382373824"
+              aria-label="Call GateLink Technologies at +91 7382373824"
               className="oz-desktop-contact"
               style={{
                 display: 'none',

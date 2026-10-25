@@ -36,7 +36,7 @@ export default function CultureGallerySection() {
             color: '#ED0000'
           }}
         >
-          Inside OZRIT
+          Inside GateLink
         </span>
 
         <h2

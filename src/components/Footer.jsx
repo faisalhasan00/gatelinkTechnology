@@ -128,19 +128,23 @@ export default function Footer() {
           }}
         >
           {/* Logo & Copyright */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-                <path d="M4 8C4 5.79 5.79 4 8 4H20C22.21 4 24 5.79 24 8V14C24 20.63 18.63 26 12 26H8C5.79 26 4 24.21 4 22V8Z" fill="#ED0000" />
-                <path d="M24 14C24 20.63 18.63 26 12 26H8C14.63 26 20 20.63 20 14V8C20 5.79 21.79 4 24 4V14Z" fill="#B30000" />
-              </svg>
-              <span style={{ fontSize: '18px', fontWeight: '900', color: '#ffffff', letterSpacing: '0.02em' }}>
-                OZRIT
-              </span>
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+              <img
+                src="/gatelink-logo.png"
+                alt="GateLink Technologies Logo"
+                style={{
+                  height: '34px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  display: 'block',
+                  filter: 'drop-shadow(0 0 10px rgba(0, 163, 255, 0.25))'
+                }}
+              />
+            </a>
 
-            <div style={{ fontSize: '12.5px', color: 'rgba(255, 255, 255, 0.4)' }}>
-              Copyright © All Rights Reserved
+            <div style={{ fontSize: '12.5px', color: 'rgba(255, 255, 255, 0.45)' }}>
+              Copyright © {new Date().getFullYear()} GateLink Technologies. All Rights Reserved.
             </div>
           </div>
 

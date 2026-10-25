@@ -62,7 +62,7 @@ export default function FAQSection() {
             </h2>
 
             <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.6)', lineHeight: 1.6, marginBottom: '36px' }}>
-              Everything you need to know about working with OZRIT, our engineering standards, and production delivery.
+              Everything you need to know about working with GateLink Technologies, our engineering standards, and production delivery.
             </p>
 
             {/* Metrics Row */}
