@@ -87,23 +87,23 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, #0052CC 0%, #0076FE 60%, #00C2FF 100%);
+  background: linear-gradient(135deg, #0B45C2 0%, #0066FF 60%, #00A3FF 100%);
   color: #ffffff;
   font-weight: 600;
   border-radius: 9999px;
   padding: 14px 28px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.45), 0 0 15px rgba(0, 194, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(11, 69, 194, 0.35);
   text-decoration: none;
 }
 
 .gl-btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0, 102, 255, 0.65), 0 0 25px rgba(0, 194, 255, 0.5);
-  background: linear-gradient(135deg, #0066FF 0%, #0099FF 50%, #00C2FF 100%);
+  box-shadow: 0 6px 24px rgba(0, 102, 255, 0.5);
+  background: linear-gradient(135deg, #0052CC 0%, #0076FE 60%, #00B4D8 100%);
 }
 
 .gl-btn-primary:active {
@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   border-radius: 9999px;
   padding: 14px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -143,11 +143,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gl-btn-secondary:hover {
-  background: linear-gradient(135deg, #0052CC 0%, #0076FE 100%);
-  border-color: #00C2FF;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 194, 255, 0.6);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.25);
 }
 
 /* Infinite Marquee Animations */

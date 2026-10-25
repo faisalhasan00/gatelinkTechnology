@@ -3,7 +3,7 @@ import { ChevronDown, ShieldCheck } from 'lucide-react';
 import { COMPLIANCE_ITEMS } from '../data/websiteData';
 
 export default function ComplianceSection() {
-  const [openIndex, setOpenIndex] = useState(2); // Default to 03 / 06 like in screenshot
+  const [openIndex, setOpenIndex] = useState(2); // Default to 03 / 06
 
   const toggleAccordion = (idx) => {
     setOpenIndex(openIndex === idx ? -1 : idx);
@@ -16,22 +16,25 @@ export default function ComplianceSection() {
         position: 'relative',
         width: '100%',
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, #003da5 0%, #0052CC 45%, #002B7A 100%)',
+        backgroundColor: '#07080c',
+        backgroundImage: 'radial-gradient(ellipse at 15% 45%, rgba(0, 102, 255, 0.09) 0%, transparent 65%)',
         color: '#ffffff',
-        padding: '100px 24px 120px 24px'
+        padding: '110px 24px 130px 24px',
+        borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
       }}
     >
-      {/* 3D Wireframe Sphere background effect */}
+      {/* 3D Wireframe Ring subtle background effect */}
       <div
         style={{
           position: 'absolute',
-          top: '-20%',
-          left: '-10%',
-          width: '600px',
-          height: '600px',
+          top: '-15%',
+          left: '-8%',
+          width: '560px',
+          height: '560px',
           borderRadius: '50%',
-          border: '1px solid rgba(255, 255, 255, 0.15)',
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)',
+          border: '1px solid rgba(0, 194, 255, 0.12)',
+          background: 'radial-gradient(circle, rgba(0, 102, 255, 0.04) 0%, transparent 70%)',
           pointerEvents: 'none'
         }}
       />
@@ -55,13 +58,14 @@ export default function ComplianceSection() {
                 gap: '8px',
                 padding: '6px 14px',
                 borderRadius: '9999px',
-                background: 'rgba(255, 255, 255, 0.15)',
+                background: 'rgba(0, 102, 255, 0.1)',
+                border: '1px solid rgba(0, 194, 255, 0.25)',
                 backdropFilter: 'blur(8px)',
-                marginBottom: '20px'
+                marginBottom: '22px'
               }}
             >
-              <ShieldCheck size={16} color="#ffffff" />
-              <span style={{ fontSize: '11px', fontWeight: '800', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              <ShieldCheck size={16} color="#00C2FF" />
+              <span style={{ fontSize: '11px', fontWeight: '800', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00C2FF' }}>
                 ZERO REGULATORY SURPRISES
               </span>
             </div>
@@ -72,11 +76,19 @@ export default function ComplianceSection() {
                 fontWeight: '900',
                 lineHeight: 1.15,
                 letterSpacing: '-0.03em',
-                marginBottom: '24px'
+                marginBottom: '24px',
+                color: '#ffffff'
               }}
             >
               Compliance Built In,
-              <span style={{ display: 'block', opacity: 0.95 }}>
+              <span
+                style={{
+                  display: 'block',
+                  background: 'linear-gradient(135deg, #ffffff 40%, #7dd3fc 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
                 Not Bolted On
               </span>
             </h2>
@@ -85,15 +97,15 @@ export default function ComplianceSection() {
               style={{
                 fontSize: 'clamp(1.05rem, 1.8vw, 1.2rem)',
                 lineHeight: 1.7,
-                color: 'rgba(255, 255, 255, 0.9)',
+                color: 'rgba(255, 255, 255, 0.65)',
                 maxWidth: '520px'
               }}
             >
-              Regulatory requirements show up in architecture reviews, threat models, and rollout gates from sprint zero. Every system we ship is reviewed against the standards your <strong style={{ textDecoration: 'underline', textUnderlineOffset: '4px' }}>industry, region, and customers</strong> actually live under, so production never surprises your auditors.
+              Regulatory requirements show up in architecture reviews, threat models, and rollout gates from sprint zero. Every system we ship is reviewed against the standards your <strong style={{ color: '#ffffff', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#00C2FF' }}>industry, region, and customers</strong> actually live under, so production never surprises your auditors.
             </p>
           </div>
 
-          {/* Right Column: 6 Interactive Accordion Items matching live Ozrit Screenshot 10 */}
+          {/* Right Column: 6 Interactive Accordion Items matching live Ozrit */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             {COMPLIANCE_ITEMS.map((item, idx) => {
               const isOpen = openIndex === idx;
@@ -101,9 +113,10 @@ export default function ComplianceSection() {
                 <div
                   key={idx}
                   style={{
-                    borderTop: '1px solid rgba(255, 255, 255, 0.25)',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                     padding: '24px 0',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transition: 'background 0.2s'
                   }}
                   onClick={() => toggleAccordion(idx)}
                 >
@@ -114,9 +127,10 @@ export default function ComplianceSection() {
                         style={{
                           fontSize: '13px',
                           fontWeight: '700',
-                          color: 'rgba(255, 255, 255, 0.65)',
+                          color: isOpen ? '#00C2FF' : 'rgba(255, 255, 255, 0.4)',
                           letterSpacing: '0.08em',
-                          minWidth: '55px'
+                          minWidth: '55px',
+                          transition: 'color 0.2s'
                         }}
                       >
                         {item.num}
@@ -126,9 +140,10 @@ export default function ComplianceSection() {
                         style={{
                           fontSize: 'clamp(1.15rem, 2vw, 1.45rem)',
                           fontWeight: '700',
-                          color: '#ffffff',
+                          color: isOpen ? '#ffffff' : 'rgba(255, 255, 255, 0.85)',
                           margin: 0,
-                          letterSpacing: '-0.01em'
+                          letterSpacing: '-0.01em',
+                          transition: 'color 0.2s'
                         }}
                       >
                         {item.title}
@@ -138,9 +153,8 @@ export default function ComplianceSection() {
                     <div
                       style={{
                         transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                        transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                        color: '#ffffff',
-                        opacity: 0.85
+                        transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s',
+                        color: isOpen ? '#00C2FF' : 'rgba(255, 255, 255, 0.4)'
                       }}
                     >
                       <ChevronDown size={22} />
@@ -164,12 +178,12 @@ export default function ComplianceSection() {
                           style={{
                             padding: '6px 16px',
                             borderRadius: '9999px',
-                            background: 'rgba(255, 255, 255, 0.2)',
+                            background: 'rgba(0, 102, 255, 0.1)',
                             backdropFilter: 'blur(8px)',
-                            border: '1px solid rgba(255, 255, 255, 0.35)',
-                            color: '#ffffff',
+                            border: '1px solid rgba(0, 194, 255, 0.25)',
+                            color: '#7dd3fc',
                             fontSize: '12.5px',
-                            fontWeight: '700',
+                            fontWeight: '600',
                             letterSpacing: '0.04em'
                           }}
                         >
@@ -181,7 +195,7 @@ export default function ComplianceSection() {
                 </div>
               );
             })}
-            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.25)' }} />
+            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)' }} />
           </div>
 
         </div>

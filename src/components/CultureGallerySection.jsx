@@ -1,11 +1,11 @@
 import React from 'react';
 
 const PHOTOS = [
-  { src: '/g2.jpg', alt: 'OZRIT engineering team at the Hyderabad office' },
-  { src: '/g4.jpg', alt: "Inside OZRIT's Hyderabad office" },
-  { src: '/g5.jpg', alt: 'OZRIT engineers and designers at work in Hyderabad' },
-  { src: '/g6.jpg', alt: 'OZRIT development team in Hyderabad' },
-  { src: '/g7.jpg', alt: 'OZRIT office culture in Hyderabad' }
+  { src: '/g2.jpg', alt: 'GateLink engineering team at the Hyderabad office' },
+  { src: '/g4.jpg', alt: "Inside GateLink's Hyderabad office" },
+  { src: '/g5.jpg', alt: 'GateLink engineers and designers at work in Hyderabad' },
+  { src: '/g6.jpg', alt: 'GateLink development team in Hyderabad' },
+  { src: '/g7.jpg', alt: 'GateLink office culture in Hyderabad' }
 ];
 
 export default function CultureGallerySection() {
@@ -19,9 +19,11 @@ export default function CultureGallerySection() {
         position: 'relative',
         width: '100%',
         overflow: 'hidden',
-        backgroundColor: '#f0f7ff',
-        paddingTop: '80px',
-        paddingBottom: '90px'
+        backgroundColor: '#080808',
+        paddingTop: '90px',
+        paddingBottom: '100px',
+        borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px' }}>
@@ -33,7 +35,7 @@ export default function CultureGallerySection() {
             fontWeight: '700',
             textTransform: 'uppercase',
             letterSpacing: '0.2em',
-            color: '#0066FF'
+            color: '#00C2FF'
           }}
         >
           Inside GateLink
@@ -44,7 +46,7 @@ export default function CultureGallerySection() {
             fontSize: 'clamp(2rem, 3.8vw, 3rem)',
             fontWeight: '800',
             letterSpacing: '-0.025em',
-            color: '#0f172a',
+            color: '#ffffff',
             lineHeight: 1.15,
             margin: '0 0 16px 0'
           }}
@@ -55,7 +57,7 @@ export default function CultureGallerySection() {
         <p
           style={{
             fontSize: '17px',
-            color: '#6b5555',
+            color: 'rgba(255, 255, 255, 0.65)',
             maxWidth: '680px',
             lineHeight: 1.6
           }}
@@ -74,8 +76,8 @@ export default function CultureGallerySection() {
             top: 0,
             bottom: 0,
             left: 0,
-            width: '90px',
-            background: 'linear-gradient(to right, #ffeded, transparent)',
+            width: '100px',
+            background: 'linear-gradient(to right, #080808, transparent)',
             zIndex: 10,
             pointerEvents: 'none'
           }}
@@ -86,8 +88,8 @@ export default function CultureGallerySection() {
             top: 0,
             bottom: 0,
             right: 0,
-            width: '90px',
-            background: 'linear-gradient(to left, #ffeded, transparent)',
+            width: '100px',
+            background: 'linear-gradient(to left, #080808, transparent)',
             zIndex: 10,
             pointerEvents: 'none'
           }}

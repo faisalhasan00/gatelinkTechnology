@@ -552,22 +552,24 @@ export default function Navbar() {
                 alignItems: 'center',
                 gap: '8px',
                 padding: '10px 22px',
-                background: 'linear-gradient(135deg, #0052CC 0%, #0076FE 60%, #00C2FF 100%)',
+                backgroundColor: '#0052CC',
                 color: '#ffffff',
                 fontSize: '14px',
                 fontWeight: '600',
                 borderRadius: '6px',
                 textDecoration: 'none',
                 transition: 'all 0.25s ease',
-                boxShadow: '0 4px 15px rgba(0, 102, 255, 0.35)'
+                boxShadow: '0 2px 10px rgba(0, 82, 204, 0.25)'
               }}
               onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#0047b3';
                 e.currentTarget.style.transform = 'translateY(-1px)';
-                e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 102, 255, 0.5)';
+                e.currentTarget.style.boxShadow = '0 4px 14px rgba(0, 82, 204, 0.4)';
               }}
               onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#0052CC';
                 e.currentTarget.style.transform = 'none';
-                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 102, 255, 0.35)';
+                e.currentTarget.style.boxShadow = '0 2px 10px rgba(0, 82, 204, 0.25)';
               }}
             >
               <Phone size={15} />
@@ -697,12 +699,12 @@ export default function Navbar() {
                 justifyContent: 'center',
                 gap: '8px',
                 padding: '14px',
-                background: 'linear-gradient(135deg, #0052CC 0%, #0076FE 60%, #00C2FF 100%)',
+                backgroundColor: '#0052CC',
                 color: '#ffffff',
                 borderRadius: '10px',
                 fontWeight: '600',
                 textDecoration: 'none',
-                boxShadow: '0 4px 15px rgba(0, 102, 255, 0.35)'
+                boxShadow: '0 2px 10px rgba(0, 82, 204, 0.25)'
               }}
             >
               <Phone size={16} />
