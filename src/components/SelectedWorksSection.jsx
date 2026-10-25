@@ -88,7 +88,7 @@ export default function SelectedWorksSection() {
       card.style.width = `${cardWidth}px`;
     });
 
-    const totalTrackWidth = cards.length * cardWidth + (cards.length - 1) * 22 + 80;
+    const totalTrackWidth = cards.length * cardWidth + (cards.length - 1) * 18 + 80;
     const scrollDistance = Math.max(0, totalTrackWidth - container.offsetWidth);
 
     // 1. Entrance timeline matching live Ozrit 3bwciyz9rne7e.js
@@ -303,7 +303,7 @@ export default function SelectedWorksSection() {
       }}
     >
       {/* Header Container - Sleek Responsive Top Bar */}
-      <div style={{ maxWidth: '1440px', width: '100%', margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 10, marginBottom: '14px' }}>
+      <div style={{ maxWidth: '1440px', width: '100%', margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 10, marginBottom: '24px' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '20px', flexWrap: 'wrap' }}>
           <div>
             <p
@@ -458,7 +458,7 @@ export default function SelectedWorksSection() {
             ref={trackRef}
             style={{
               display: 'flex',
-              gap: '22px',
+              gap: '18px',
               willChange: 'transform',
               paddingLeft: '40px',
               paddingRight: '60px'
@@ -473,7 +473,7 @@ export default function SelectedWorksSection() {
                 onClick={() => setActiveModalCase(study)}
                 style={{
                   width: '380px',
-                  height: '395px',
+                  height: '385px',
                   backgroundColor: study.bg || '#F9F7F4',
                   borderRadius: '24px',
                   position: 'relative',
@@ -638,12 +638,12 @@ export default function SelectedWorksSection() {
                     </p>
                   </div>
 
-                  {/* Device Preview Banner with Colored L-frame */}
+                  {/* Device Preview Banner with Colored L-frame - Pushed down to eliminate empty gap */}
                   <div
                     style={{
                       position: 'relative',
-                      margin: '14px 18px 0 18px',
-                      height: '155px',
+                      margin: 'auto 16px 8px 16px',
+                      height: '148px',
                       display: 'flex',
                       alignItems: 'flex-end',
                       justifyContent: 'center'
@@ -794,24 +794,42 @@ export default function SelectedWorksSection() {
                     </div>
                   </div>
 
-                  {/* Bottom Right Colored Action Button */}
+                  {/* Bottom Action Row - Eliminates dead bottom gap */}
                   <div
                     style={{
-                      position: 'absolute',
-                      bottom: '12px',
-                      right: '18px',
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '50%',
-                      backgroundColor: study.textColor || '#0066FF',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: `0 3px 12px ${study.textColor || '#0066FF'}45`,
-                      transition: 'transform 0.2s ease'
+                      justifyContent: 'space-between',
+                      padding: '0 20px 14px 20px'
                     }}
                   >
-                    <ArrowUpRight size={18} color="#FFFFFF" strokeWidth={2.4} />
+                    <span
+                      style={{
+                        fontSize: '11px',
+                        fontWeight: '800',
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                        color: study.textColor || '#0066FF'
+                      }}
+                    >
+                      Case Study
+                    </span>
+
+                    <div
+                      style={{
+                        width: '34px',
+                        height: '34px',
+                        borderRadius: '50%',
+                        backgroundColor: study.textColor || '#0066FF',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: `0 3px 10px ${study.textColor || '#0066FF'}40`,
+                        transition: 'transform 0.2s ease'
+                      }}
+                    >
+                      <ArrowUpRight size={17} color="#FFFFFF" strokeWidth={2.4} />
+                    </div>
                   </div>
                 </div>
               </div>
