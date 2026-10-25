@@ -83,12 +83,12 @@ export default function SelectedWorksSection() {
 
     if (!section || !container || !track || cards.length === 0) return;
 
-    const cardWidth = window.innerWidth < 1024 ? 360 : 420;
+    const cardWidth = window.innerWidth < 1024 ? 330 : 380;
     cards.forEach((card) => {
       card.style.width = `${cardWidth}px`;
     });
 
-    const totalTrackWidth = cards.length * cardWidth + (cards.length - 1) * 24 + 80;
+    const totalTrackWidth = cards.length * cardWidth + (cards.length - 1) * 22 + 80;
     const scrollDistance = Math.max(0, totalTrackWidth - container.offsetWidth);
 
     // 1. Entrance timeline matching live Ozrit 3bwciyz9rne7e.js
@@ -294,159 +294,149 @@ export default function SelectedWorksSection() {
         position: 'relative',
         width: '100%',
         backgroundColor: '#090909',
-        padding: '95px 0 80px 0',
+        minHeight: isMobile ? 'auto' : '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: isMobile ? 'flex-start' : 'center',
+        padding: isMobile ? '48px 0' : '24px 0',
         overflow: 'hidden'
       }}
     >
-      {/* Top Right "View All Case Studies" Pill matching live Ozrit */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '100px',
-          right: '36px',
-          zIndex: 20
-        }}
-        className="hidden md:flex"
-      >
-        <a
-          href="#contact-section"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '10px 22px',
-            borderRadius: '9999px',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            color: 'rgba(255, 255, 255, 0.85)',
-            fontSize: '13.5px',
-            fontWeight: '600',
-            textDecoration: 'none',
-            backgroundColor: 'transparent',
-            transition: 'all 0.25s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#ffffff';
-            e.currentTarget.style.color = '#000000';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
-            e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)';
-          }}
-        >
-          <span>View All Case Studies</span>
-          <ArrowUpRight size={15} />
-        </a>
-      </div>
+      {/* Header Container - Sleek Responsive Top Bar */}
+      <div style={{ maxWidth: '1440px', width: '100%', margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 10, marginBottom: '14px' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '20px', flexWrap: 'wrap' }}>
+          <div>
+            <p
+              ref={eyebrowRef}
+              style={{
+                fontSize: '12px',
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                letterSpacing: '0.22em',
+                color: '#00C2FF',
+                marginBottom: '6px'
+              }}
+            >
+              SELECTED WORKS
+            </p>
 
-      {/* Header Container */}
-      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 10 }}>
-        <div style={{ textAlign: 'center', marginBottom: '35px' }}>
-          <p
-            ref={eyebrowRef}
-            style={{
-              fontSize: '13px',
-              fontWeight: '700',
-              textTransform: 'uppercase',
-              letterSpacing: '0.25em',
-              color: '#00C2FF',
-              marginBottom: '12px'
-            }}
-          >
-            SELECTED WORKS
-          </p>
+            <h2
+              ref={headingRef}
+              style={{
+                fontSize: 'clamp(1.9rem, 3.2vw, 2.7rem)',
+                fontWeight: '800',
+                color: '#ffffff',
+                letterSpacing: '-0.03em',
+                margin: 0,
+                lineHeight: 1.15
+              }}
+            >
+              {mounted ? <HeadingChars text="Case Studies" /> : 'Case Studies'}
+            </h2>
 
-          <h2
-            ref={headingRef}
-            style={{
-              fontSize: 'clamp(2.4rem, 4.8vw, 4.4rem)',
-              fontWeight: '800',
-              color: '#ffffff',
-              letterSpacing: '-0.03em',
-              margin: '0 0 14px 0',
-              lineHeight: 1.15
-            }}
-          >
-            {mounted ? <HeadingChars text="Case Studies" /> : 'Case Studies'}
-          </h2>
+            <p
+              ref={subRef}
+              style={{
+                fontSize: '13.5px',
+                color: 'rgba(255, 255, 255, 0.72)',
+                margin: '5px 0 0 0',
+                maxWidth: '650px',
+                lineHeight: 1.45
+              }}
+            >
+              Explore our featured production deployments — delivering autonomous AI, high-velocity mobile commerce, luxury digital platforms, and real-time enterprise SaaS.
+            </p>
+          </div>
 
-          <p
-            ref={subRef}
-            style={{
-              fontSize: 'clamp(1rem, 1.6vw, 1.2rem)',
-              color: 'rgba(255, 255, 255, 0.75)',
-              maxWidth: '850px',
-              margin: '0 auto',
-              lineHeight: 1.6
-            }}
-          >
-            Explore our featured production deployments — delivering autonomous AI, high-velocity mobile commerce, luxury digital platforms, and real-time enterprise SaaS.
-          </p>
-        </div>
+          {/* Right: Controls & View All Button */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <a
+              href="#contact-section"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '7px',
+                padding: '8px 16px',
+                borderRadius: '9999px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                color: 'rgba(255, 255, 255, 0.85)',
+                fontSize: '12.5px',
+                fontWeight: '600',
+                textDecoration: 'none',
+                backgroundColor: 'rgba(255, 255, 255, 0.04)',
+                transition: 'all 0.25s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#ffffff';
+                e.currentTarget.style.color = '#000000';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.04)';
+                e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)';
+              }}
+            >
+              <span>View All</span>
+              <ArrowUpRight size={14} />
+            </a>
 
-        {/* Carousel Navigation Buttons on Desktop */}
-        <div
-          style={{
-            display: isMobile ? 'none' : 'flex',
-            justifyContent: 'flex-end',
-            gap: '10px',
-            marginBottom: '15px',
-            paddingRight: '12px'
-          }}
-        >
-          <button
-            onClick={() => scrollByAmount('left')}
-            aria-label="Previous case studies"
-            style={{
-              width: '42px',
-              height: '42px',
-              borderRadius: '50%',
-              backgroundColor: 'rgba(255, 255, 255, 0.08)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
-              color: '#ffffff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#0066FF';
-              e.currentTarget.style.borderColor = '#00C2FF';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
-            }}
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={() => scrollByAmount('right')}
-            aria-label="Next case studies"
-            style={{
-              width: '42px',
-              height: '42px',
-              borderRadius: '50%',
-              backgroundColor: 'rgba(255, 255, 255, 0.08)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
-              color: '#ffffff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#0066FF';
-              e.currentTarget.style.borderColor = '#00C2FF';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
-            }}
-          >
-            <ChevronRight size={20} />
-          </button>
+            {/* Carousel Navigation Buttons on Desktop */}
+            <div style={{ display: isMobile ? 'none' : 'flex', gap: '8px' }}>
+              <button
+                onClick={() => scrollByAmount('left')}
+                aria-label="Previous case studies"
+                style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  color: '#ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#0066FF';
+                  e.currentTarget.style.borderColor = '#00C2FF';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                }}
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={() => scrollByAmount('right')}
+                aria-label="Next case studies"
+                style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  color: '#ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#0066FF';
+                  e.currentTarget.style.borderColor = '#00C2FF';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                }}
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -459,19 +449,18 @@ export default function SelectedWorksSection() {
             width: '100%',
             userSelect: 'none',
             overflow: 'hidden',
-            height: 'clamp(520px, 64vh, 600px)'
+            height: '425px',
+            display: 'flex',
+            alignItems: 'center'
           }}
         >
           <div
             ref={trackRef}
             style={{
-              position: 'absolute',
-              top: '50%',
-              left: '40px',
-              transform: 'translateY(-50%)',
               display: 'flex',
-              gap: '24px',
+              gap: '22px',
               willChange: 'transform',
+              paddingLeft: '40px',
               paddingRight: '60px'
             }}
           >
@@ -483,17 +472,17 @@ export default function SelectedWorksSection() {
                 onMouseLeave={() => handleCardLeave(idx)}
                 onClick={() => setActiveModalCase(study)}
                 style={{
-                  width: '420px',
-                  height: 'clamp(490px, 60vh, 540px)',
+                  width: '380px',
+                  height: '395px',
                   backgroundColor: study.bg || '#F9F7F4',
-                  borderRadius: '26px',
+                  borderRadius: '24px',
                   position: 'relative',
                   flexShrink: 0,
                   cursor: 'pointer',
                   transform: 'translateZ(0)',
                   transformStyle: 'preserve-3d',
                   willChange: 'transform',
-                  boxShadow: '0 16px 40px rgba(0, 0, 0, 0.28)',
+                  boxShadow: '0 14px 36px rgba(0, 0, 0, 0.25)',
                   border: '1px solid rgba(0, 0, 0, 0.05)',
                   overflow: 'hidden',
                   display: 'flex',
@@ -523,27 +512,27 @@ export default function SelectedWorksSection() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      padding: '28px 28px 0 28px',
-                      height: '66px'
+                      padding: '20px 22px 0 22px',
+                      height: '52px'
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       {study.id === 'taazabazar' ? (
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                           <img
                             src="/projects/logos/taazabazar.png"
                             alt="Taaza Bazar"
                             style={{
-                              width: '36px',
-                              height: '36px',
-                              borderRadius: '9px',
+                              width: '30px',
+                              height: '30px',
+                              borderRadius: '7px',
                               objectFit: 'cover',
-                              boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
+                              boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
                             }}
                           />
                           <span
                             style={{
-                              fontSize: '19px',
+                              fontSize: '17px',
                               fontWeight: '800',
                               color: '#15803D',
                               letterSpacing: '-0.02em',
@@ -554,19 +543,19 @@ export default function SelectedWorksSection() {
                           </span>
                         </div>
                       ) : study.id === 'buildscape' ? (
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                           <img
                             src="/projects/logos/buildscape.png"
                             alt="Buildscape"
                             style={{
-                              height: '34px',
+                              height: '28px',
                               width: 'auto',
                               objectFit: 'contain'
                             }}
                           />
                           <span
                             style={{
-                              fontSize: '18px',
+                              fontSize: '16.5px',
                               fontWeight: '800',
                               color: '#92400E',
                               letterSpacing: '-0.01em',
@@ -577,19 +566,19 @@ export default function SelectedWorksSection() {
                           </span>
                         </div>
                       ) : study.id === 'tapmenu' ? (
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
                           <img
                             src="/projects/logos/tapmenu.png"
                             alt="TapMenu"
                             style={{
-                              height: '32px',
+                              height: '26px',
                               width: 'auto',
                               objectFit: 'contain'
                             }}
                           />
                           <span
                             style={{
-                              fontSize: '18px',
+                              fontSize: '16.5px',
                               fontWeight: '800',
                               color: '#4338CA',
                               letterSpacing: '-0.01em',
@@ -604,14 +593,14 @@ export default function SelectedWorksSection() {
                           src={study.logo}
                           alt={`${study.client} logo`}
                           style={{
-                            height: '34px',
+                            height: '28px',
                             width: 'auto',
-                            maxWidth: '170px',
+                            maxWidth: '150px',
                             objectFit: 'contain'
                           }}
                         />
                       ) : (
-                        <span style={{ fontSize: '18px', fontWeight: '800', color: '#0F172A' }}>
+                        <span style={{ fontSize: '17px', fontWeight: '800', color: '#0F172A' }}>
                           {study.client}
                         </span>
                       )}
@@ -619,7 +608,7 @@ export default function SelectedWorksSection() {
 
                     <span
                       style={{
-                        fontSize: '14px',
+                        fontSize: '13px',
                         fontWeight: '600',
                         color: '#94A3B8',
                         letterSpacing: '0.04em'
@@ -630,14 +619,19 @@ export default function SelectedWorksSection() {
                   </div>
 
                   {/* Description Paragraph */}
-                  <div style={{ padding: '16px 28px 0 28px' }}>
+                  <div style={{ padding: '8px 22px 0 22px', flexShrink: 0 }}>
                     <p
                       style={{
-                        fontSize: '14.5px',
-                        lineHeight: 1.62,
+                        fontSize: '12.5px',
+                        lineHeight: 1.48,
                         fontWeight: '500',
                         color: '#1E293B',
-                        margin: 0
+                        margin: 0,
+                        display: '-webkit-box',
+                        WebkitLineClamp: 4,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
                       }}
                     >
                       {study.description}
@@ -648,8 +642,8 @@ export default function SelectedWorksSection() {
                   <div
                     style={{
                       position: 'relative',
-                      margin: '22px 24px 0 24px',
-                      height: '180px',
+                      margin: '14px 18px 0 18px',
+                      height: '155px',
                       display: 'flex',
                       alignItems: 'flex-end',
                       justifyContent: 'center'
@@ -660,53 +654,53 @@ export default function SelectedWorksSection() {
                       style={{
                         position: 'relative',
                         width: '100%',
-                        height: '142px',
+                        height: '122px',
                         backgroundColor: '#ffffff',
-                        borderRadius: '20px',
-                        borderLeft: `8px solid ${study.textColor || '#0066FF'}`,
-                        borderBottom: `8px solid ${study.textColor || '#0066FF'}`,
+                        borderRadius: '16px',
+                        borderLeft: `6px solid ${study.textColor || '#0066FF'}`,
+                        borderBottom: `6px solid ${study.textColor || '#0066FF'}`,
                         borderTop: 'none',
                         borderRight: 'none',
-                        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.05)',
+                        boxShadow: '0 6px 18px rgba(0, 0, 0, 0.05)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        padding: '16px 18px',
+                        padding: '12px 14px',
                         overflow: 'visible'
                       }}
                     >
                       {/* Left: Mini Logo & Slogan */}
-                      <div style={{ flex: 1, paddingRight: '12px', zIndex: 2 }}>
+                      <div style={{ flex: 1, paddingRight: '10px', zIndex: 2 }}>
                         {study.id === 'taazabazar' ? (
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                             <img
                               src="/projects/logos/taazabazar.png"
                               alt="Taaza Bazar"
-                              style={{ width: '24px', height: '24px', borderRadius: '6px', objectFit: 'cover' }}
+                              style={{ width: '20px', height: '20px', borderRadius: '5px', objectFit: 'cover' }}
                             />
-                            <span style={{ fontSize: '13px', fontWeight: '800', color: '#15803D' }}>
+                            <span style={{ fontSize: '12px', fontWeight: '800', color: '#15803D' }}>
                               Taaza Bazar
                             </span>
                           </div>
                         ) : study.id === 'buildscape' ? (
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                             <img
                               src="/projects/logos/buildscape.png"
                               alt="Buildscape"
-                              style={{ height: '22px', width: 'auto', objectFit: 'contain' }}
+                              style={{ height: '18px', width: 'auto', objectFit: 'contain' }}
                             />
-                            <span style={{ fontSize: '13px', fontWeight: '800', color: '#92400E' }}>
+                            <span style={{ fontSize: '12px', fontWeight: '800', color: '#92400E' }}>
                               Buildscape
                             </span>
                           </div>
                         ) : study.id === 'tapmenu' ? (
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                             <img
                               src="/projects/logos/tapmenu.png"
                               alt="TapMenu"
-                              style={{ height: '20px', width: 'auto', objectFit: 'contain' }}
+                              style={{ height: '16px', width: 'auto', objectFit: 'contain' }}
                             />
-                            <span style={{ fontSize: '13px', fontWeight: '800', color: '#4338CA' }}>
+                            <span style={{ fontSize: '12px', fontWeight: '800', color: '#4338CA' }}>
                               TapMenu
                             </span>
                           </div>
@@ -715,26 +709,26 @@ export default function SelectedWorksSection() {
                             src={study.logo}
                             alt={study.client}
                             style={{
-                              height: '22px',
+                              height: '18px',
                               width: 'auto',
-                              maxWidth: '120px',
+                              maxWidth: '100px',
                               objectFit: 'contain'
                             }}
                           />
                         ) : (
-                          <span style={{ fontSize: '13px', fontWeight: '800', color: '#0F172A' }}>
+                          <span style={{ fontSize: '12px', fontWeight: '800', color: '#0F172A' }}>
                             {study.client}
                           </span>
                         )}
 
                         <p
                           style={{
-                            fontSize: '12.5px',
+                            fontSize: '11px',
                             fontWeight: '700',
                             lineHeight: 1.35,
                             color: '#1E293B',
-                            margin: '10px 0 0 0',
-                            maxWidth: '175px'
+                            margin: '6px 0 0 0',
+                            maxWidth: '145px'
                           }}
                         >
                           {study.slogan}
@@ -745,15 +739,15 @@ export default function SelectedWorksSection() {
                       <div
                         style={{
                           position: 'relative',
-                          width: '106px',
-                          height: '184px',
-                          marginTop: '-48px',
+                          width: '92px',
+                          height: '158px',
+                          marginTop: '-40px',
                           marginBottom: '-3px',
                           flexShrink: 0,
                           backgroundColor: '#0F172A',
-                          borderRadius: '18px',
-                          padding: '3.5px',
-                          boxShadow: '0 16px 32px rgba(0, 0, 0, 0.22), 0 2px 6px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.18)',
+                          borderRadius: '16px',
+                          padding: '3px',
+                          boxShadow: '0 12px 24px rgba(0, 0, 0, 0.22), 0 2px 6px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.18)',
                           zIndex: 5,
                           display: 'flex',
                           flexDirection: 'column',
@@ -764,11 +758,11 @@ export default function SelectedWorksSection() {
                         <div
                           style={{
                             position: 'absolute',
-                            top: '5.5px',
+                            top: '4.5px',
                             left: '50%',
                             transform: 'translateX(-50%)',
-                            width: '28px',
-                            height: '5.5px',
+                            width: '24px',
+                            height: '4.5px',
                             backgroundColor: '#000000',
                             borderRadius: '9999px',
                             zIndex: 10
@@ -779,7 +773,7 @@ export default function SelectedWorksSection() {
                           style={{
                             width: '100%',
                             height: '100%',
-                            borderRadius: '15px',
+                            borderRadius: '13px',
                             overflow: 'hidden',
                             backgroundColor: '#000000'
                           }}
@@ -804,20 +798,20 @@ export default function SelectedWorksSection() {
                   <div
                     style={{
                       position: 'absolute',
-                      bottom: '16px',
-                      right: '24px',
-                      width: '42px',
-                      height: '42px',
+                      bottom: '12px',
+                      right: '18px',
+                      width: '36px',
+                      height: '36px',
                       borderRadius: '50%',
                       backgroundColor: study.textColor || '#0066FF',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      boxShadow: `0 4px 14px ${study.textColor || '#0066FF'}45`,
+                      boxShadow: `0 3px 12px ${study.textColor || '#0066FF'}45`,
                       transition: 'transform 0.2s ease'
                     }}
                   >
-                    <ArrowUpRight size={20} color="#FFFFFF" strokeWidth={2.5} />
+                    <ArrowUpRight size={18} color="#FFFFFF" strokeWidth={2.4} />
                   </div>
                 </div>
               </div>
