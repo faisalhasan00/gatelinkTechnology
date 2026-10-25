@@ -1,205 +1,135 @@
 // OZRIT Technologies - Authoritative Data Content & Configuration (Matched 100% to live ozrit.com)
 
-// 8 Case Studies with pastel card styling & official CDN mockup graphics
+// 5 Completed Client Projects for GateLink Technologies
 export const CASE_STUDIES = [
   {
-    id: 'goldplus',
+    id: 'matchpoint',
     num: '01',
-    client: 'GoldPlus',
-    category: 'Fintech — Digital Gold',
-    description: 'Traditional gold saving methods felt outdated for younger users. A secure digital gold platform with savings tracking and gamification was developed to make saving more engaging. This increased user participation and encouraged better financial habits.',
-    bg_color: '#FFE9B7',
-    bg: '#F9F7F4',
-    textColor: '#C28300',
-    image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/goldplus2.png',
-    logo: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/goldplus_logo2.png',
-    detail_image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/goldplus_detail2.png',
-    slogan: 'Saving Gold, the Smart Digital Way.',
-    tags: ['React Native', 'Node.js', 'PostgreSQL', 'Real-time Gold Rate API', 'AWS'],
+    client: 'Match Point AI',
+    category: 'AI Recruiting & Workforce Intelligence',
+    description: 'Manual resume screening and recruiter bias slow hiring velocity. Match Point AI delivers autonomous candidate sourcing, multi-dimensional skill evaluation, and real-time interview intelligence to place elite talent faster.',
+    bg_color: '#0D1B2A',
+    bg: '#0D1B2A',
+    textColor: '#00D9F5',
+    image: '/projects/matchpoint.jpg',
+    logo: '',
+    detail_image: '/projects/matchpoint.jpg',
+    slogan: 'Next-Gen AI Matching for High-Velocity Hiring.',
+    liveUrl: 'https://www.matchpoint-ai.co/',
+    tags: ['React', 'Python', 'FastAPI', 'Vector Search', 'OpenAI', 'AWS'],
     metrics: [
-      { value: '+42%', label: 'Active User Growth' },
-      { value: '+35%', label: 'Saving Completion' },
-      { value: '+28%', label: 'Transaction Growth' }
+      { value: '65%', label: 'Faster Time-to-Hire' },
+      { value: '4.8x', label: 'Match Accuracy' },
+      { value: '80k+', label: 'Profiles Evaluated' }
     ],
     quote: {
-      name: 'Sultan',
-      title: 'Founder, GoldPlus',
-      text: 'OZRIT understood our vision and helped us turn it into a smooth, easy-to-use digital product.'
+      name: 'Match Point Leadership',
+      title: 'Founding Team, Match Point AI',
+      text: 'GateLink built our autonomous AI talent screening engine with exceptional speed, precision, and engineering excellence.'
     }
   },
   {
-    id: 'powerbilt',
+    id: 'taazabazar',
     num: '02',
-    client: 'PowerBilt',
-    category: 'Industrial E-Commerce',
-    description: 'Professionals and businesses needed reliable access to high-performance power tools and accessories. A scalable digital platform improved product visibility, streamlined enquiries, and enhanced the overall buying experience.',
-    bg_color: '#FEDCDE',
-    bg: '#FFEDEE',
-    textColor: '#FF0000',
-    image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/powerbilt2.png',
-    logo: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/powerbilt_logo2.png',
-    detail_image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/powerbilt_detail.png',
-    slogan: 'Powering Professionals with Reliable Tools.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Elasticsearch', 'AWS'],
+    client: 'Taaza Bazar',
+    category: 'Quick Commerce & Hyperlocal Grocery',
+    description: 'Direct farm-to-table grocery delivery ecosystem connecting local farmers with consumers. Features automated inventory sync, route-optimized rider dispatch, live GPS order tracking, and instant UPI checkout for fresh daily essentials in 15 minutes.',
+    bg_color: '#0F2417',
+    bg: '#0F2417',
+    textColor: '#22C55E',
+    image: '/projects/taazabazar.jpg',
+    logo: '',
+    detail_image: '/projects/taazabazar.jpg',
+    slogan: 'Farm-Fresh Produce Delivered in 15 Minutes.',
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.taazabazar.app',
+    tags: ['React Native', 'Node.js', 'MongoDB', 'Redis', 'Google Maps API', 'Razorpay'],
     metrics: [
-      { value: '+42%', label: 'User Growth' },
-      { value: '+35%', label: 'Engagement' },
-      { value: '+28%', label: 'Customer Conversion' }
+      { value: '15 Min', label: 'Avg Delivery Time' },
+      { value: '+180%', label: 'Monthly GMV Growth' },
+      { value: '50k+', label: 'Active Households' }
     ],
     quote: {
-      name: 'Taikhum',
-      title: 'Founder, PowerBilt',
-      text: 'OZRIT understood our requirements clearly and helped us turn our idea into a reliable digital solution.'
+      name: 'Taaza Bazar Operations',
+      title: 'Founding Team, Taaza Bazar',
+      text: 'GateLink engineered a bulletproof mobile commerce ecosystem that scaled seamlessly with our rapid order growth.'
     }
   },
   {
-    id: 'rutur',
+    id: 'buildscape',
     num: '03',
-    client: 'Rutur',
-    category: 'Mobility & Urban Transit',
-    description: 'People in tier-2 cities lacked a reliable and affordable way to book local transportation. A unified mobility platform with instant booking, live tracking, and multi-vehicle support improved ride accessibility and enhanced the overall travel experience.',
-    bg_color: '#ECE7F9',
-    bg: '#ECE6FA',
-    textColor: '#754ACB',
-    image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/rutur2.png',
-    logo: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/rutur_logo2.png',
-    detail_image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/rutur_detail.png',
-    slogan: 'Connecting Cities, One Ride at a Time.',
-    tags: ['React Native', 'Node.js', 'MongoDB', 'Google Maps / Live GPS', 'AWS'],
+    client: 'Buildscape Architects & Engineers',
+    category: 'Luxury Architecture & Turnkey Construction',
+    description: 'Integrated digital platform and client portal for luxury architectural engineering in Shadnagar, Telangana. Incorporates interactive 3D villa models, structural blueprints, transparent BOQ tracking, and high-conversion client consultation flows.',
+    bg_color: '#1A1713',
+    bg: '#1A1713',
+    textColor: '#D4AF37',
+    image: '/projects/buildscape.jpg',
+    logo: '',
+    detail_image: '/projects/buildscape.jpg',
+    slogan: 'Luxury Architecture, Engineering & Turnkey Construction.',
+    liveUrl: 'https://www.buildscape9.com/',
+    tags: ['React', 'Three.js / WebGL', 'Vite', 'Node.js', 'PostgreSQL', 'Cloudflare'],
     metrics: [
-      { value: '+48%', label: 'Ride Growth' },
-      { value: '+32%', label: 'Booking Growth' },
-      { value: '+27%', label: 'User Growth' }
+      { value: '+65%', label: 'Qualified Inquiries' },
+      { value: '40+', label: 'Luxury Villas Delivered' },
+      { value: '100%', label: 'Digital Transparency' }
     ],
     quote: {
-      name: 'Nikhil',
-      title: 'Co-Founder, Rutur',
-      text: 'OZRIT helped us build a reliable platform that makes the entire ride-booking experience smoother for our customers and drivers.'
+      name: 'Mohammad Khaja Osman',
+      title: 'Founder & Principal Architect, Buildscape',
+      text: 'GateLink translated our architectural vision into a world-class digital experience that wows our high-net-worth clients.'
     }
   },
   {
-    id: 'sympl',
+    id: 'omnixa',
     num: '04',
-    client: 'Sympl',
-    category: 'Local Classifieds & Marketplace',
-    description: 'Local communities needed a trusted platform to buy and sell products and services nearby. A location-based classifieds marketplace simplified local transactions, improved user engagement, and enabled faster buying and selling experiences.',
-    bg_color: '#FEF9ED',
-    bg: '#EFE9C8',
-    textColor: '#FED902',
-    image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/sympl2.png',
-    logo: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/sympl_logo2.png',
-    detail_image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/sympl_detail.png',
-    slogan: 'Where Local Buyers Meet Local Sellers.',
-    tags: ['React Native', 'Node.js', 'PostgreSQL', 'Elasticsearch', 'Firebase Chat', 'AWS'],
+    client: 'Omnixa AI',
+    category: 'Autonomous AI Agents & Enterprise Automation',
+    description: 'Omnichannel AI automation fleet that engages inbound leads, answers complex product queries, and closes sales 24/7 across WhatsApp, Instagram, Facebook, and Web with under 3-second response times.',
+    bg_color: '#0A151E',
+    bg: '#0A151E',
+    textColor: '#00E88F',
+    image: '/projects/omnixa.jpg',
+    logo: '',
+    detail_image: '/projects/omnixa.jpg',
+    slogan: 'Your Business Runs 24/7. Even When You Don’t.',
+    liveUrl: 'https://www.omnixa.ai/',
+    tags: ['Next.js', 'Python', 'LangChain', 'WhatsApp Cloud API', 'PostgreSQL', 'AWS'],
     metrics: [
-      { value: '+38%', label: 'User Growth' },
-      { value: '+41%', label: 'Listing Growth' },
-      { value: '+29%', label: 'Transaction Growth' }
+      { value: '< 3s', label: 'Speed-to-Lead Response' },
+      { value: '3x', label: 'Lead Conversion' },
+      { value: '24/7', label: 'Autonomous Uptime' }
     ],
     quote: {
-      name: 'Srinivas',
-      title: 'Leadership, Sympl',
-      text: 'The OZRIT team understood the product requirements well and delivered a platform that makes the experience simple for our users.'
+      name: 'Omnixa Product Leadership',
+      title: 'Co-Founder, Omnixa AI',
+      text: 'GateLink built our autonomous multi-agent pipelines with robust fault tolerance and enterprise reliability.'
     }
   },
   {
-    id: 'ridev',
+    id: 'tapmenu',
     num: '05',
-    client: 'RideEV',
-    category: 'CleanTech & EV Mobility',
-    description: 'An EV bike rental platform designed to make daily commuting affordable, convenient, and eco-friendly. Real-time booking, ride tracking, and digital payments deliver a seamless user experience. The solution promotes sustainable transportation and supports greater EV adoption.',
-    bg_color: '#EEF4E7',
-    bg: '#FDFBFB',
-    textColor: '#99D768',
-    image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/ridev2.png',
-    logo: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/ridev_logo2.png',
-    detail_image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/ridev_detail4.png',
-    slogan: 'Driving Sustainable Mobility for Everyday Commutes.',
-    tags: ['React Native', 'Node.js', 'PostgreSQL', 'IoT / GPS Fleet Tracking', 'Razorpay', 'AWS'],
+    client: 'TapMenu',
+    category: 'Hospitality SaaS & QR Table Ordering',
+    description: 'Contactless QR menu and table ordering platform for restaurants and cloud kitchens in India. Diners scan a single QR code to order from their smartphone browser without apps, while owners manage live KDS kitchen orders and analytics.',
+    bg_color: '#0C1E30',
+    bg: '#0C1E30',
+    textColor: '#38BDF8',
+    image: '/projects/tapmenu.jpg',
+    logo: '',
+    detail_image: '/projects/tapmenu.jpg',
+    slogan: 'One QR Code for the Entire Restaurant.',
+    liveUrl: 'https://www.tapmenu.in/',
+    tags: ['Next.js', 'Node.js', 'WebSockets', 'PostgreSQL', 'TailwindCSS', 'AWS'],
     metrics: [
-      { value: '+46%', label: 'Booking Growth' },
-      { value: '+34%', label: 'Fleet Utilisation' },
-      { value: '+31%', label: 'User Growth' }
+      { value: '+35%', label: 'Table Turnover Speed' },
+      { value: '0', label: 'App Installs Required' },
+      { value: '120+', label: 'Restaurants Live' }
     ],
     quote: {
-      name: 'Manish',
-      title: 'Founder, Ridev',
-      text: 'OZRIT brought strong technical expertise to the project and helped us create a platform built around our operational needs.'
-    }
-  },
-  {
-    id: 'bizlo',
-    num: '06',
-    client: 'Bizlo',
-    category: 'B2B Wholesale Commerce',
-    description: 'A B2B commerce platform designed to connect wholesalers, manufacturers, and buyers seamlessly. Product catalogs, enquiry workflows, and communication tools simplify wholesale operations. The solution helps businesses expand reach and drive faster buyer-seller engagement.',
-    bg_color: '#D9E9FE',
-    bg: '#EEF4FC',
-    textColor: '#184795',
-    image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/bizlo2.png',
-    logo: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/bizlo_logo2.png',
-    detail_image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/bizlo_detail4.png',
-    slogan: 'Empowering Businesses Through Digital Commerce.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Elasticsearch', 'AWS Cloud'],
-    metrics: [
-      { value: '+44%', label: 'Enquiry Growth' },
-      { value: '+37%', label: 'Supplier Growth' },
-      { value: '+29%', label: 'Lead Conversion' }
-    ],
-    quote: {
-      name: 'Arun',
-      title: 'Founder, Bizlo',
-      text: 'OZRIT helped us transform our business idea into a practical digital platform and made the development journey much easier.'
-    }
-  },
-  {
-    id: 'home-renovation',
-    num: '07',
-    client: 'Home Renovation',
-    category: 'Home Services Marketplace',
-    description: 'A digital platform that connects homeowners with trusted renovation and maintenance professionals. Simplified booking, scheduling, and service management create a seamless customer experience. The solution improves convenience, trust, and service provider engagement.',
-    bg_color: '#FFE6D9',
-    bg: '#FFE1C9',
-    textColor: '#F37026',
-    image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/homerenovation2.png',
-    logo: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/homeRenovation_logo2.png',
-    detail_image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/homeInnovation_detail.png',
-    slogan: 'Transforming Homes, Simplifying Services.',
-    tags: ['React Native', 'Node.js', 'PostgreSQL', 'Scheduling Engine', 'AWS'],
-    metrics: [
-      { value: '+45%', label: 'Customer Growth' },
-      { value: '+38%', label: 'Enquiries' },
-      { value: '+31%', label: 'Lead Conversion' }
-    ],
-    quote: {
-      name: 'Nagarjuna',
-      title: 'Founder, Home Renovation',
-      text: 'The OZRIT team made the entire development process smooth and helped us create a platform that works well for our customers.'
-    }
-  },
-  {
-    id: 'studio-app',
-    num: '08',
-    client: 'Studio App',
-    category: 'MediaTech & Creator SaaS',
-    description: 'Studio App helps photographers and media professionals securely manage, organize, and share event memories with clients. It streamlines media storage, album sharing, and collaboration through a seamless digital experience. The platform enhances efficiency while delivering a better and more convenient client experience.',
-    bg_color: '#FDEFC8',
-    bg: '#FFFAED',
-    textColor: '#FEBE01',
-    image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/studio.png',
-    logo: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/studio_logo.png',
-    detail_image: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-images(next)/studio_detail.png',
-    slogan: 'Smart Media Management for Professionals.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Cloud Object Storage S3', 'AWS'],
-    metrics: [
-      { value: '+52%', label: 'Faster Delivery' },
-      { value: '+38%', label: 'User Growth' },
-      { value: '+33%', label: 'Repeat Bookings' }
-    ],
-    quote: {
-      name: 'Chandra Sekhar',
-      title: 'Founder, Studio App',
-      text: 'OZRIT understood what we wanted to build and helped us create a streamlined experience that saves time for our users.'
+      name: 'TapMenu Operations',
+      title: 'Product Leadership, TapMenu',
+      text: 'GateLink delivered an exceptionally fast, real-time ordering engine that restaurant owners and diners love.'
     }
   }
 ];
@@ -390,63 +320,42 @@ export const TRUSTED_PARTNERS = [
   { name: 'qualtrics.xm', logo: 'https://vibemart-ozrit.b-cdn.net/ozrit-website-logos/LOGO/qualtrics.svg' }
 ];
 
-// Testimonials
+// Testimonials from GateLink Technology Clients
 export const TESTIMONIALS = [
   {
-    quote: 'OZRIT understood our vision and helped us turn it into a smooth, easy-to-use digital product.',
-    author: 'Sultan',
-    role: 'Founder',
-    company: 'GoldPlus',
-    initial: 'S'
+    quote: 'GateLink built our autonomous AI talent screening engine with exceptional speed, vector precision, and engineering excellence.',
+    author: 'Match Point Leadership',
+    role: 'Founding Team',
+    company: 'Match Point AI',
+    initial: 'M'
   },
   {
-    quote: 'OZRIT understood our requirements clearly and helped us turn our idea into a reliable digital solution.',
-    author: 'Taikhum',
-    role: 'Founder',
-    company: 'PowerBilt',
+    quote: 'GateLink engineered a bulletproof mobile commerce ecosystem with live GPS tracking that scaled seamlessly with our rapid order growth.',
+    author: 'Taaza Bazar Operations',
+    role: 'Product Lead',
+    company: 'Taaza Bazar',
     initial: 'T'
   },
   {
-    quote: 'OZRIT helped us build a reliable platform that makes the entire ride-booking experience smoother for our customers and drivers.',
-    author: 'Nikhil',
+    quote: 'GateLink translated our architectural vision into a world-class digital experience that wows our high-net-worth clients across Telangana.',
+    author: 'Mohammad Khaja Osman',
+    role: 'Founder & Principal Architect',
+    company: 'Buildscape Architects',
+    initial: 'M'
+  },
+  {
+    quote: 'GateLink built our autonomous multi-agent pipelines with sub-3s response latency and enterprise-grade reliability.',
+    author: 'Omnixa Leadership',
     role: 'Co-Founder',
-    company: 'Rutur',
-    initial: 'N'
+    company: 'Omnixa AI',
+    initial: 'O'
   },
   {
-    quote: 'The OZRIT team understood the product requirements well and delivered a platform that makes the experience simple for our users.',
-    author: 'Srinivas',
-    role: 'Leadership',
-    company: 'Sympl',
-    initial: 'S'
-  },
-  {
-    quote: 'OZRIT brought strong technical expertise to the project and helped us create a platform built around our operational needs.',
-    author: 'Manish',
-    role: 'Founder',
-    company: 'RideEV',
-    initial: 'M'
-  },
-  {
-    quote: 'OZRIT helped us transform our business idea into a practical digital platform and made the development journey much easier.',
-    author: 'Arun',
-    role: 'Founder',
-    company: 'Bizlo',
-    initial: 'A'
-  },
-  {
-    quote: 'The team understood the challenges of building high-concurrency systems and delivered a smooth experience for our enterprise users.',
-    author: 'S C Rao',
-    role: 'Founder',
-    company: 'Cab Pooling',
-    initial: 'S'
-  },
-  {
-    quote: 'Working with OZRIT was a smooth experience. The team understood our vision and delivered a solution that supports our business goals.',
-    author: 'Max',
-    role: 'Founder',
-    company: 'Trueway',
-    initial: 'M'
+    quote: 'GateLink delivered an exceptionally fast, real-time QR ordering engine that restaurant owners and diners love across 120+ venues.',
+    author: 'TapMenu Operations',
+    role: 'Product Leadership',
+    company: 'TapMenu',
+    initial: 'T'
   }
 ];
 

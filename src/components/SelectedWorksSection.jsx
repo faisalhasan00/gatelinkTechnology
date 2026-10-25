@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CASE_STUDIES } from '../data/websiteData';
@@ -8,9 +8,22 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const isDarkBg = (bg) => ['#191414', '#111111', '#FF5A5F'].includes(bg);
-const getTextColor = (bg) => (isDarkBg(bg) ? 'rgba(255,255,255,0.88)' : 'rgba(0,0,0,0.78)');
-const getSubTextColor = (bg) => (isDarkBg(bg) ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.55)');
+const isDarkBg = (bg) => {
+  if (!bg) return true;
+  if (['#191414', '#111111', '#FF5A5F', '#0D1B2A', '#0F2417', '#1A1713', '#0A151E', '#0C1E30', '#090909', '#080808'].includes(bg)) return true;
+  if (bg.startsWith('#') && (bg.length === 7 || bg.length === 4)) {
+    let hex = bg.slice(1);
+    if (hex.length === 3) hex = hex.split('').map((c) => c + c).join('');
+    const r = parseInt(hex.substring(0, 2), 16) || 0;
+    const g = parseInt(hex.substring(2, 4), 16) || 0;
+    const b = parseInt(hex.substring(4, 6), 16) || 0;
+    const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+    return luminance < 140;
+  }
+  return true;
+};
+const getTextColor = (bg) => (isDarkBg(bg) ? '#ffffff' : '#111827');
+const getSubTextColor = (bg) => (isDarkBg(bg) ? 'rgba(255,255,255,0.72)' : 'rgba(0,0,0,0.65)');
 
 const HeadingChars = ({ text }) => (
   <span aria-label={text} style={{ display: 'inline-block' }}>
@@ -335,7 +348,7 @@ export default function SelectedWorksSection() {
               fontWeight: '700',
               textTransform: 'uppercase',
               letterSpacing: '0.25em',
-              color: '#f87171',
+              color: '#00C2FF',
               marginBottom: '12px'
             }}
           >
@@ -366,7 +379,7 @@ export default function SelectedWorksSection() {
               lineHeight: 1.6
             }}
           >
-            Partnering with global brands to craft digital experiences that drive measurable impact.
+            Explore our featured production deployments — delivering autonomous AI, high-velocity mobile commerce, luxury digital platforms, and real-time enterprise SaaS.
           </p>
         </div>
 
@@ -581,11 +594,16 @@ export default function SelectedWorksSection() {
                     style={{
                       position: 'relative',
                       flex: 1,
-                      minHeight: '170px',
-                      margin: '8px 20px 14px 20px',
+                      minHeight: '185px',
+                      margin: '6px 20px 14px 20px',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center'
+                      justifyContent: 'center',
+                      overflow: 'hidden',
+                      borderRadius: '16px',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      boxShadow: '0 12px 28px rgba(0, 0, 0, 0.45)',
+                      backgroundColor: 'rgba(0, 0, 0, 0.3)'
                     }}
                   >
                     <img
@@ -594,9 +612,8 @@ export default function SelectedWorksSection() {
                       style={{
                         width: '100%',
                         height: '100%',
-                        maxHeight: '220px',
-                        objectFit: 'contain',
-                        filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.18))'
+                        objectFit: 'cover',
+                        display: 'block'
                       }}
                     />
                   </div>
@@ -689,11 +706,24 @@ export default function SelectedWorksSection() {
                 {study.description}
               </p>
 
-              <div style={{ height: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+              <div
+                style={{
+                  height: '190px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '16px',
+                  borderRadius: '14px',
+                  overflow: 'hidden',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  boxShadow: '0 8px 22px rgba(0, 0, 0, 0.4)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.3)'
+                }}
+              >
                 <img
                   src={study.image}
                   alt={`${study.client} preview`}
-                  style={{ maxHeight: '170px', maxWidth: '100%', objectFit: 'contain' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
               </div>
 
@@ -788,6 +818,28 @@ export default function SelectedWorksSection() {
               {activeModalCase.slogan}
             </div>
 
+            {/* Modal Hero Preview Image */}
+            {activeModalCase.image && (
+              <div
+                style={{
+                  width: '100%',
+                  height: '240px',
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  marginBottom: '24px',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 12px 30px rgba(0, 0, 0, 0.5)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.4)'
+                }}
+              >
+                <img
+                  src={activeModalCase.image}
+                  alt={`${activeModalCase.client} mockup`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+            )}
+
             <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.7, marginBottom: '28px' }}>
               {activeModalCase.description}
             </p>
@@ -827,15 +879,52 @@ export default function SelectedWorksSection() {
               ))}
             </div>
 
-            <a
-              href="#contact-section"
-              onClick={() => setActiveModalCase(null)}
-              className="gl-btn-primary"
-              style={{ width: '100%', justifyContent: 'center' }}
-            >
-              <span>Discuss Similar Solution with GateLink</span>
-              <ArrowUpRight size={18} />
-            </a>
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {activeModalCase.liveUrl && (
+                <a
+                  href={activeModalCase.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gl-btn-primary"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
+                  <span>Visit Live Project</span>
+                  <ExternalLink size={18} />
+                </a>
+              )}
+
+              <a
+                href="#contact-section"
+                onClick={() => setActiveModalCase(null)}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  padding: '12px 24px',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(255, 255, 255, 0.18)',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 194, 255, 0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+                }}
+              >
+                <span>Discuss Similar Solution with GateLink</span>
+                <ArrowUpRight size={16} />
+              </a>
+            </div>
           </div>
         </div>
       )}
