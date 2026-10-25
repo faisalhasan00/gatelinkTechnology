@@ -527,16 +527,15 @@ export default function SelectedWorksSection() {
                         padding: '24px 24px 0 24px'
                       }}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', height: '40px' }}>
                         {study.logo ? (
                           <img
                             src={study.logo}
                             alt={`${study.client} logo`}
                             style={{
                               height: '36px',
-                              maxWidth: '140px',
-                              objectFit: 'contain',
-                              filter: isDarkBg(study.bg) ? 'brightness(10)' : 'none'
+                              maxWidth: '160px',
+                              objectFit: 'contain'
                             }}
                             onError={(e) => {
                               e.currentTarget.style.display = 'none';
@@ -685,18 +684,30 @@ export default function SelectedWorksSection() {
                 boxShadow: '0 8px 24px rgba(0,0,0,0.25)'
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', height: '36px' }}>
                 {study.logo ? (
                   <img
                     src={study.logo}
                     alt={study.client}
-                    style={{ height: '28px', maxWidth: '120px', objectFit: 'contain' }}
+                    style={{ height: '30px', maxWidth: '140px', objectFit: 'contain' }}
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      if (e.currentTarget.nextSibling) {
+                        e.currentTarget.nextSibling.style.display = 'inline-block';
+                      }
+                    }}
                   />
-                ) : (
-                  <span style={{ fontSize: '18px', fontWeight: '800', color: getTextColor(study.bg) }}>
-                    {study.client}
-                  </span>
-                )}
+                ) : null}
+                <span
+                  style={{
+                    display: study.logo ? 'none' : 'inline-block',
+                    fontSize: '18px',
+                    fontWeight: '800',
+                    color: getTextColor(study.bg)
+                  }}
+                >
+                  {study.client}
+                </span>
                 <span style={{ fontSize: '12px', fontWeight: '700', fontFamily: 'monospace', color: getSubTextColor(study.bg) }}>
                   {String(idx + 1).padStart(2, '0')}
                 </span>
@@ -810,9 +821,26 @@ export default function SelectedWorksSection() {
               </span>
             </div>
 
-            <h3 style={{ fontSize: '32px', fontWeight: '800', color: '#fff', marginBottom: '8px' }}>
-              {activeModalCase.client}
-            </h3>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '12px' }}>
+              {activeModalCase.logo ? (
+                <img
+                  src={activeModalCase.logo}
+                  alt={`${activeModalCase.client} logo`}
+                  style={{ height: '36px', maxWidth: '180px', objectFit: 'contain' }}
+                />
+              ) : null}
+              <h3
+                style={{
+                  fontSize: '32px',
+                  fontWeight: '800',
+                  color: '#fff',
+                  margin: 0,
+                  display: activeModalCase.logo ? 'none' : 'block'
+                }}
+              >
+                {activeModalCase.client}
+              </h3>
+            </div>
 
             <div style={{ fontSize: '16px', color: '#38bdf8', fontWeight: '700', marginBottom: '20px' }}>
               {activeModalCase.slogan}

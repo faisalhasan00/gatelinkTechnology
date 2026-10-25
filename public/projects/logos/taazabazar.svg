@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 44" fill="none">
+  <defs>
+    <linearGradient id="tb-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="6" width="32" height="32" rx="8" fill="url(#tb-grad)"/>
+  <path d="M18 13C18 13 22 15 22 20C22 23 19.5 25 18 25C16.5 25 14 23 14 20C14 15 18 13 18 13Z" fill="#ffffff"/>
+  <path d="M18 15V24" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="42" y="28" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
+    Taaza<tspan fill="#22C55E">Bazar</tspan>
+  </text>
+</svg>
