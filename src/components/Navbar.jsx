@@ -3,7 +3,7 @@ import { Phone, Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react';
 
 const ABOUT_LINKS = [
   { name: 'Careers', href: '#contact-section', badge: 'Hiring' },
-  { name: 'Our Team', href: '#inside-ozrit' },
+  { name: 'Our Team', href: '#inside-gatelink' },
   { name: 'Our Office', href: '#offices' },
   { name: 'Case Studies', href: '#case-studies' },
   { name: 'How We Work', href: '#process-section' },

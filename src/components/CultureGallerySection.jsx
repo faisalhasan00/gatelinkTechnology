@@ -1,11 +1,11 @@
 import React from 'react';
 
 const PHOTOS = [
-  { src: '/g2.jpg', alt: 'GateLink engineering team at the Hyderabad office' },
-  { src: '/g4.jpg', alt: "Inside GateLink's Hyderabad office" },
-  { src: '/g5.jpg', alt: 'GateLink engineers and designers at work in Hyderabad' },
-  { src: '/g6.jpg', alt: 'GateLink development team in Hyderabad' },
-  { src: '/g7.jpg', alt: 'GateLink office culture in Hyderabad' }
+  { src: '/team/team1.jpg', alt: 'GateLink engineering team collaborating at Hyderabad tech center' },
+  { src: '/team/team2.jpg', alt: 'Inside GateLink open-plan software engineering floor' },
+  { src: '/team/team3.jpg', alt: 'GateLink software architects reviewing system design on glass whiteboard' },
+  { src: '/team/team4.jpg', alt: 'GateLink engineering team standup in tech lounge' },
+  { src: '/team/team5.jpg', alt: 'GateLink frontend developers pair programming at workstation' }
 ];
 
 export default function CultureGallerySection() {
@@ -14,7 +14,7 @@ export default function CultureGallerySection() {
 
   return (
     <section
-      id="inside-ozrit"
+      id="inside-gatelink"
       style={{
         position: 'relative',
         width: '100%',
